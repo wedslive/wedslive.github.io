@@ -1,796 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>weds.live — Digital Invitations, Made Beautiful</title>
-  <meta name="description" content="Create stunning digital wedding, engagement & reception invitations in minutes. Share a beautiful link with your guests. Free to start.">
-  <meta name="keywords" content="digital wedding invitation, online invitation, wedding card, engagement invitation, reception invitation">
-  <meta property="og:title" content="weds.live — Digital Invitations, Made Beautiful">
-  <meta property="og:description" content="Create stunning digital wedding invitations in minutes. Share a beautiful link with your guests.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://weds.live">
-  <meta name="theme-color" content="#C9748F">
-
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Icons (Font Awesome free CDN) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar & Hero</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="url(#logo-gradient)"/>
+                        <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                                <stop offset="0%" stop-color="#6366f1"/>
+                                <stop offset="100%" stop-color="#8b5cf6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span>weds.live</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#services" class="nav-link">
+                        Services
+                        <svg class="dropdown-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                            <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#web-design" class="dropdown-item">
+                            <div class="dropdown-icon-wrapper">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <rect x="2" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M2 7H18" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="dropdown-title">Web Design</div>
+                                <div class="dropdown-desc">Beautiful, modern websites</div>
+                            </div>
+                        </a>
+                        <a href="#development" class="dropdown-item">
+                            <div class="dropdown-icon-wrapper">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M6 7L3 10L6 13M14 7L17 10L14 13M11 4L9 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="dropdown-title">Development</div>
+                                <div class="dropdown-desc">Custom web applications</div>
+                            </div>
+                        </a>
+                        <a href="#branding" class="dropdown-item">
+                            <div class="dropdown-icon-wrapper">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M10 6V10L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="dropdown-title">Branding</div>
+                                <div class="dropdown-desc">Identity & strategy</div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
 
-<!-- ===================== NAVBAR ===================== -->
-<nav class="navbar" id="navbar">
-  <a href="#" class="nav-logo">
-    <span class="logo-script">weds.live</span>
-    <span class="logo-tagline">Digital Invitations, Made Beautiful</span>
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="#how-it-works">How It Works</a></li>
-    <li><a href="#templates">Templates</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-  </ul>
-
-  <a href="#" class="btn btn-primary nav-cta">
-    <i class="fa-solid fa-heart"></i> Create Invitation
-  </a>
-
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- Mobile Menu Overlay -->
-<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
-
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#how-it-works">How It Works</a>
-  <a href="#templates">Templates</a>
-  <a href="#features">Features</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#" class="btn btn-primary" style="margin-top:1rem;">
-    <i class="fa-solid fa-heart"></i> Create Invitation
-  </a>
-</div>
-
-<!-- ===================== HERO ===================== -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <!-- Left: Text -->
-    <div class="hero-text">
-      <div class="hero-badge">
-        <i class="fa-solid fa-star"></i>
-        Trusted by 10,000+ couples worldwide
-      </div>
-
-      <div class="hero-title-script">Your Love Story</div>
-      <h1 class="hero-title-main">
-        Deserves a <strong>Beautiful</strong><br>Digital Invitation
-      </h1>
-
-      <p class="hero-desc">
-        Create elegant, personalised digital invitations for your wedding, engagement, or reception — in minutes. Share a stunning link your guests will love.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#" class="btn btn-primary">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-          Create Free Invitation
-        </a>
-        <a href="#templates" class="btn btn-ghost">
-          <i class="fa-regular fa-eye"></i>
-          Browse Templates
-        </a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-number" data-target="10000" data-suffix="+">0+</div>
-          <div class="stat-label">Invitations Sent</div>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.66 4.34L14.24 5.76M5.76 14.24L4.34 15.66M15.66 15.66L14.24 14.24M5.76 5.76L4.34 4.34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M17 10.5C16 14.5 12.5 17 8.5 17C5 17 2 14 2 10.5C2 6.5 4.5 3 8.5 3C8.83 3 9.15 3.03 9.47 3.09C8.55 4.24 8 5.68 8 7.25C8 10.98 11.02 14 14.75 14C15.58 14 16.37 13.85 17.1 13.57C17.03 13.88 17 14.19 17 14.5V10.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <a href="#" class="nav-cta">
+                    Get Started
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="50" data-suffix="+">0+</div>
-          <div class="stat-label">Templates</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="98" data-suffix="%">0%</div>
-          <div class="stat-label">Happy Couples</div>
-        </div>
-      </div>
-    </div>
+        <div class="nav-progress"></div>
+    </nav>
 
-    <!-- Right: Phone Mockup -->
-    <div class="hero-visual">
-      <div class="phone-mockup-wrap">
-        <div class="phone-glow"></div>
-
-        <!-- Floating cards -->
-        <div class="float-card float-card-1">
-          <span class="fc-icon">💌</span>
-          <span>Invitation sent!</span>
-        </div>
-        <div class="float-card float-card-2">
-          <span class="fc-icon">✅</span>
-          <span>124 RSVPs received</span>
-        </div>
-        <div class="float-card float-card-3">
-          <span class="fc-icon">🎉</span>
-          <span>Live & sharing</span>
-        </div>
-
-        <!-- Phone frame -->
-        <div class="phone-frame">
-          <div class="phone-inner">
-            <!-- Dynamic Island with speaker and camera -->
-            <div class="phone-dynamic-island">
-              <div class="phone-dynamic-island-pill">
-                <div class="phone-speaker-dots">
-                  <span></span><span></span><span></span><span></span><span></span>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to Your Amazing Website</h1>
+                <p class="hero-subtitle">Create something extraordinary with modern design and seamless user experience</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                    <a href="#" class="btn btn-secondary">Learn More</a>
                 </div>
-                <div class="phone-camera-dot"></div>
-              </div>
             </div>
-
-            <!-- Full screen content -->
-            <div class="phone-screen">
-              <div class="phone-screen-bg"></div>
-              <div class="phone-screen-content">
-                <img
-                  src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=200&h=200&fit=crop&q=70"
-                  alt="Couple"
-                  class="phone-couple-img"
-                >
-                <div class="phone-couple-name">Sarah &amp; James</div>
-                <div class="phone-date">Saturday, 14 June 2025</div>
-                <div class="phone-divider"></div>
-                <p style="font-size:0.6rem;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;letter-spacing:0.05em;">COUNTING DOWN TO OUR BIG DAY</p>
-                <div class="phone-countdown">
-                  <div class="phone-count-box">
-                    <div class="phone-count-num" id="cd-days">47</div>
-                    <div class="phone-count-label">Days</div>
-                  </div>
-                  <div class="phone-count-box">
-                    <div class="phone-count-num" id="cd-hours">08</div>
-                    <div class="phone-count-label">Hrs</div>
-                  </div>
-                  <div class="phone-count-box">
-                    <div class="phone-count-num" id="cd-minutes">32</div>
-                    <div class="phone-count-label">Min</div>
-                  </div>
-                  <div class="phone-count-box">
-                    <div class="phone-count-num" id="cd-seconds">15</div>
-                    <div class="phone-count-label">Sec</div>
-                  </div>
-                </div>
-                <span class="phone-btn-demo">Open Invitation</span>
-              </div>
-            </div>
-
-            <!-- Bottom navigation with 5 buttons including Wish -->
-            <div class="phone-navbar">
-              <div class="phone-nav-item active">
-                <span class="phone-nav-icon">🏠</span>
-                <span>Home</span>
-              </div>
-              <div class="phone-nav-item">
-                <span class="phone-nav-icon">👫</span>
-                <span>Couple</span>
-              </div>
-              <div class="phone-nav-item">
-                <span class="phone-nav-icon">📅</span>
-                <span>Date</span>
-              </div>
-              <div class="phone-nav-item">
-                <span class="phone-nav-icon">🖼️</span>
-                <span>Gallery</span>
-              </div>
-              <div class="phone-nav-item">
-                <span class="phone-nav-icon">💝</span>
-                <span>Wish</span>
-              </div>
-            </div>
-
-            <!-- Home indicator bar -->
-            <div class="phone-home-indicator">
-              <div class="phone-home-indicator-bar"></div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ===================== HOW IT WORKS ===================== -->
-<section class="section how-section" id="how-it-works">
-  <div class="container">
-    <div class="text-center fade-up">
-      <div class="section-label">Simple Process</div>
-      <h2 class="section-title">Create Your Invitation in <span>4 Easy Steps</span></h2>
-      <p class="section-subtitle">No design skills needed. Go from idea to a live, shareable invitation in under 10 minutes.</p>
-    </div>
-
-    <div class="steps-grid">
-      <div class="step-card fade-up fade-up-delay-1">
-        <div class="step-icon-wrap">
-          <span>✏️</span>
-          <span class="step-number">1</span>
-        </div>
-        <h3 class="step-title">Choose a Template</h3>
-        <p class="step-desc">Browse our curated collection of elegant templates for weddings, engagements, and receptions.</p>
-      </div>
-
-      <div class="step-card fade-up fade-up-delay-2">
-        <div class="step-icon-wrap">
-          <span>💑</span>
-          <span class="step-number">2</span>
-        </div>
-        <h3 class="step-title">Add Your Details</h3>
-        <p class="step-desc">Fill in your names, date, venue, photos, and love story. Everything is customisable.</p>
-      </div>
-
-      <div class="step-card fade-up fade-up-delay-3">
-        <div class="step-icon-wrap">
-          <span>🎨</span>
-          <span class="step-number">3</span>
-        </div>
-        <h3 class="step-title">Personalise the Look</h3>
-        <p class="step-desc">Pick your colours, fonts, and music. Make it truly yours with our easy editor.</p>
-      </div>
-
-      <div class="step-card fade-up fade-up-delay-4">
-        <div class="step-icon-wrap">
-          <span>🔗</span>
-          <span class="step-number">4</span>
-        </div>
-        <h3 class="step-title">Share Your Link</h3>
-        <p class="step-desc">Get a beautiful shareable link. Send it via WhatsApp, Instagram, or email — instantly.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== TEMPLATES ===================== -->
-<section class="section templates-section" id="templates">
-  <div class="container">
-    <div class="text-center fade-up">
-      <div class="section-label">Template Gallery</div>
-      <h2 class="section-title">Designs for Every <span>Love Story</span></h2>
-      <p class="section-subtitle">From classic elegance to modern minimalism — find the perfect style for your special day.</p>
-    </div>
-
-    <div class="templates-filter fade-up">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="wedding">Wedding</button>
-      <button class="filter-btn" data-filter="engagement">Engagement</button>
-      <button class="filter-btn" data-filter="reception">Reception</button>
-    </div>
-
-    <div class="templates-grid">
-
-      <!-- Template 1 -->
-      <div class="template-card fade-up fade-up-delay-1" data-category="wedding">
-        <div class="template-preview tpl-1">
-          <div class="template-preview-inner">
-            <img
-              src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=120&h=120&fit=crop&q=70"
-              alt="Couple" class="tpl-couple-img"
-            >
-            <div class="tpl-couple-name">Amelia &amp; Noah</div>
-            <div class="tpl-deco-line"></div>
-            <div class="tpl-date">12 · 07 · 2025</div>
-          </div>
-          <div class="tpl-overlay">
-            <span class="tpl-preview-btn">Preview</span>
-          </div>
-        </div>
-        <div class="template-info">
-          <span class="tpl-name">Midnight Rose</span>
-          <span class="tpl-tag tpl-tag-rose">Wedding</span>
-        </div>
-      </div>
-
-      <!-- Template 2 -->
-      <div class="template-card fade-up fade-up-delay-2" data-category="wedding">
-        <div class="template-preview tpl-2">
-          <div class="template-preview-inner">
-            <img
-              src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=120&h=120&fit=crop&q=70"
-              alt="Couple" class="tpl-couple-img"
-            >
-            <div class="tpl-couple-name">Isabella &amp; Liam</div>
-            <div class="tpl-deco-line"></div>
-            <div class="tpl-date">28 · 09 · 2025</div>
-          </div>
-          <div class="tpl-overlay">
-            <span class="tpl-preview-btn">Preview</span>
-          </div>
-        </div>
-        <div class="template-info">
-          <span class="tpl-name">Ocean Blue</span>
-          <span class="tpl-tag tpl-tag-gold">Wedding</span>
-        </div>
-      </div>
-
-      <!-- Template 3 -->
-      <div class="template-card fade-up fade-up-delay-3" data-category="engagement">
-        <div class="template-preview tpl-3">
-          <div class="template-preview-inner">
-            <img
-              src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=120&h=120&fit=crop&q=70"
-              alt="Couple" class="tpl-couple-img"
-            >
-            <div class="tpl-couple-name">Sophia &amp; Ethan</div>
-            <div class="tpl-deco-line"></div>
-            <div class="tpl-date">05 · 11 · 2025</div>
-          </div>
-          <div class="tpl-overlay">
-            <span class="tpl-preview-btn">Preview</span>
-          </div>
-        </div>
-        <div class="template-info">
-          <span class="tpl-name">Garden Green</span>
-          <span class="tpl-tag tpl-tag-green">Engagement</span>
-        </div>
-      </div>
-
-      <!-- Template 4 -->
-      <div class="template-card fade-up fade-up-delay-1" data-category="reception">
-        <div class="template-preview tpl-4">
-          <div class="template-preview-inner">
-            <img
-              src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=120&h=120&fit=crop&q=70"
-              alt="Couple" class="tpl-couple-img"
-            >
-            <div class="tpl-couple-name">Olivia &amp; Mason</div>
-            <div class="tpl-deco-line"></div>
-            <div class="tpl-date">20 · 12 · 2025</div>
-          </div>
-          <div class="tpl-overlay">
-            <span class="tpl-preview-btn">Preview</span>
-          </div>
-        </div>
-        <div class="template-info">
-          <span class="tpl-name">Lavender Dream</span>
-          <span class="tpl-tag tpl-tag-purple">Reception</span>
-        </div>
-      </div>
-
-      <!-- Template 5 -->
-      <div class="template-card fade-up fade-up-delay-2" data-category="wedding">
-        <div class="template-preview tpl-5">
-          <div class="template-preview-inner">
-            <img
-              src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=120&h=120&fit=crop&q=70"
-              alt="Couple" class="tpl-couple-img"
-            >
-            <div class="tpl-couple-name">Emma &amp; Oliver</div>
-            <div class="tpl-deco-line"></div>
-            <div class="tpl-date">14 · 02 · 2026</div>
-          </div>
-          <div class="tpl-overlay">
-            <span class="tpl-preview-btn">Preview</span>
-          </div>
-        </div>
-        <div class="template-info">
-          <span class="tpl-name">Golden Hour</span>
-          <span class="tpl-tag tpl-tag-gold">Wedding</span>
-        </div>
-      </div>
-
-      <!-- Template 6 -->
-      <div class="template-card fade-up fade-up-delay-3" data-category="engagement">
-        <div class="template-preview tpl-6">
-          <div class="template-preview-inner">
-            <img
-              src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=120&h=120&fit=crop&q=70"
-              alt="Couple" class="tpl-couple-img"
-            >
-            <div class="tpl-couple-name">Ava &amp; William</div>
-            <div class="tpl-deco-line"></div>
-            <div class="tpl-date">08 · 03 · 2026</div>
-          </div>
-          <div class="tpl-overlay">
-            <span class="tpl-preview-btn">Preview</span>
-          </div>
-        </div>
-        <div class="template-info">
-          <span class="tpl-name">Teal Serenity</span>
-          <span class="tpl-tag tpl-tag-teal">Engagement</span>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="templates-cta fade-up">
-      <p style="color:var(--brown-light);margin-bottom:1.5rem;font-size:0.9rem;">
-        Showing 6 of 50+ templates &nbsp;·&nbsp; New designs added every month
-      </p>
-      <a href="#" class="btn btn-outline">
-        <i class="fa-solid fa-grid-2"></i>
-        View All Templates
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FEATURES ===================== -->
-<section class="section features-section" id="features">
-  <div class="container">
-    <div class="text-center fade-up">
-      <div class="section-label">Why weds.live</div>
-      <h2 class="section-title">Everything You Need for Your <span>Perfect Invitation</span></h2>
-      <p class="section-subtitle">Packed with thoughtful features that make creating and sharing your invitation effortless.</p>
-    </div>
-
-    <div class="features-grid">
-
-      <div class="feature-card fade-up fade-up-delay-1">
-        <div class="feature-icon">💌</div>
-        <h3 class="feature-title">Instant Shareable Link</h3>
-        <p class="feature-desc">Get a beautiful, personalised URL like <em>weds.live/sarah-james</em> that you can share anywhere — WhatsApp, Instagram, email, or SMS.</p>
-      </div>
-
-      <div class="feature-card fade-up fade-up-delay-2">
-        <div class="feature-icon">📱</div>
-        <h3 class="feature-title">Mobile-First Design</h3>
-        <p class="feature-desc">Every template is crafted to look stunning on smartphones — because that's where your guests will open it.</p>
-      </div>
-
-      <div class="feature-card fade-up fade-up-delay-3">
-        <div class="feature-icon">⏱️</div>
-        <h3 class="feature-title">Live Countdown Timer</h3>
-        <p class="feature-desc">A real-time countdown to your big day keeps guests excited and reminds them of the date automatically.</p>
-      </div>
-
-      <div class="feature-card fade-up fade-up-delay-1">
-        <div class="feature-icon">✅</div>
-        <h3 class="feature-title">RSVP Management</h3>
-        <p class="feature-desc">Collect RSVPs directly through your invitation. View responses in a clean dashboard — no spreadsheets needed.</p>
-      </div>
-
-      <div class="feature-card fade-up fade-up-delay-2">
-        <div class="feature-icon">🖼️</div>
-        <h3 class="feature-title">Photo Gallery</h3>
-        <p class="feature-desc">Add a beautiful photo gallery to your invitation. Share your love story through images your guests can browse.</p>
-      </div>
-
-      <div class="feature-card fade-up fade-up-delay-3">
-        <div class="feature-icon">🎵</div>
-        <h3 class="feature-title">Background Music</h3>
-        <p class="feature-desc">Set the mood with your favourite song playing softly in the background when guests open your invitation.</p>
-      </div>
-
-      <div class="feature-card fade-up fade-up-delay-1">
-        <div class="feature-icon">💬</div>
-        <h3 class="feature-title">Guest Wishes Wall</h3>
-        <p class="feature-desc">Let guests leave heartfelt messages and wishes directly on your invitation page — a digital guestbook.</p>
-      </div>
-
-      <div class="feature-card fade-up fade-up-delay-2">
-        <div class="feature-icon">🗺️</div>
-        <h3 class="feature-title">Venue Map & Directions</h3>
-        <p class="feature-desc">Embed your venue location so guests can get directions with one tap — no more "where is it?" messages.</p>
-      </div>
-
-      <div class="feature-card fade-up fade-up-delay-3">
-        <div class="feature-icon">🌙</div>
-        <h3 class="feature-title">Dark & Light Themes</h3>
-        <p class="feature-desc">Your invitation automatically adapts to your guests' device theme preference for the best viewing experience.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== PRICING ===================== -->
-<section class="section pricing-section" id="pricing">
-  <div class="container">
-    <div class="text-center fade-up">
-      <div class="section-label">Simple Pricing</div>
-      <h2 class="section-title">One Invitation, <span>One Price</span></h2>
-      <p class="section-subtitle">No subscriptions. No hidden fees. Pay once and your invitation stays live forever.</p>
-    </div>
-
-    <div class="pricing-grid">
-
-      <!-- Free -->
-      <div class="pricing-card fade-up fade-up-delay-1">
-        <div class="pricing-plan">Free</div>
-        <div class="pricing-price"><sup>$</sup>0</div>
-        <div class="pricing-period">Forever free · No credit card needed</div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            1 invitation
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            5 free templates
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            Shareable link
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            RSVP (up to 50 guests)
-          </li>
-          <li class="pricing-feature disabled">
-            <span class="check"><i class="fa-solid fa-xmark" style="font-size:0.6rem;"></i></span>
-            Photo gallery
-          </li>
-          <li class="pricing-feature disabled">
-            <span class="check"><i class="fa-solid fa-xmark" style="font-size:0.6rem;"></i></span>
-            Background music
-          </li>
-          <li class="pricing-feature disabled">
-            <span class="check"><i class="fa-solid fa-xmark" style="font-size:0.6rem;"></i></span>
-            Custom domain
-          </li>
-        </ul>
-        <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started Free</a>
-      </div>
-
-      <!-- Premium (featured) -->
-      <div class="pricing-card featured fade-up fade-up-delay-2">
-        <span class="pricing-badge">Most Popular</span>
-        <div class="pricing-plan">Premium</div>
-        <div class="pricing-price"><sup>$</sup>19</div>
-        <div class="pricing-period">One-time payment · Live forever</div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            1 invitation
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            All 50+ templates
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            Custom shareable link
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            Unlimited RSVPs
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            Photo gallery (30 photos)
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            Background music
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            Guest wishes wall
-          </li>
-        </ul>
-        <a href="#" class="btn btn-primary" style="width:100%;justify-content:center;">
-          <i class="fa-solid fa-heart"></i> Create Now
-        </a>
-      </div>
-
-      <!-- Bundle -->
-      <div class="pricing-card fade-up fade-up-delay-3">
-        <div class="pricing-plan">Bundle</div>
-        <div class="pricing-price"><sup>$</sup>39</div>
-        <div class="pricing-period">3 invitations · Best for full events</div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-features">
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            3 invitations
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            All 50+ templates
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            Custom shareable links
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            Unlimited RSVPs
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            Unlimited photos
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            Background music
-          </li>
-          <li class="pricing-feature">
-            <span class="check"><i class="fa-solid fa-check" style="font-size:0.6rem;"></i></span>
-            Priority support
-          </li>
-        </ul>
-        <a href="#" class="btn btn-gold" style="width:100%;justify-content:center;">Get Bundle</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== TESTIMONIALS ===================== -->
-<section class="section testimonials-section" id="testimonials">
-  <div class="container">
-    <div class="text-center fade-up">
-      <div class="section-label">Love Stories</div>
-      <h2 class="section-title">Couples Who <span>Loved It</span></h2>
-      <p class="section-subtitle">Don't just take our word for it — here's what real couples are saying.</p>
-    </div>
-
-    <div class="testimonials-grid">
-
-      <div class="testimonial-card fade-up fade-up-delay-1">
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">We created our wedding invitation in under 20 minutes and our guests were absolutely blown away. So many people asked us how we made it!</p>
-        <div class="testimonial-author">
-          <img
-            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=88&h=88&fit=crop&q=70"
-            alt="Sarah" class="author-avatar"
-          >
-          <div>
-            <div class="author-name">Sarah &amp; James</div>
-            <div class="author-event">Wedding · June 2025</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card fade-up fade-up-delay-2">
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">The templates are gorgeous and the RSVP feature saved us so much time. We could see exactly who was coming in real time. Absolutely worth it.</p>
-        <div class="testimonial-author">
-          <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=88&h=88&fit=crop&q=70"
-            alt="Priya" class="author-avatar"
-          >
-          <div>
-            <div class="author-name">Priya &amp; Arjun</div>
-            <div class="author-event">Wedding · March 2025</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card fade-up fade-up-delay-3">
-        <div class="testimonial-stars">★★★★★</div>
-        <div class="testimonial-quote">"</div>
-        <p class="testimonial-text">I used weds.live for our engagement party and it was perfect. The countdown timer was a lovely touch — guests kept checking it!</p>
-        <div class="testimonial-author">
-          <img
-            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=88&h=88&fit=crop&q=70"
-            alt="Emily" class="author-avatar"
-          >
-          <div>
-            <div class="author-name">Emily &amp; Tom</div>
-            <div class="author-event">Engagement · January 2025</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ===================== CTA BANNER ===================== -->
-<section class="section cta-section">
-  <div class="container">
-    <div class="cta-content fade-up">
-      <div class="cta-script">Begin Your Story</div>
-      <h2 class="cta-title">Your Perfect Invitation is Just Minutes Away</h2>
-      <p class="cta-desc">
-        Join thousands of couples who chose weds.live to share their most important day.<br>
-        Free to start. No design skills needed. Live in minutes.
-      </p>
-      <div class="cta-actions">
-        <a href="#" class="btn btn-primary">
-          <i class="fa-solid fa-wand-magic-sparkles"></i>
-          Create Your Invitation
-        </a>
-        <a href="#templates" class="btn btn-ghost">
-          <i class="fa-regular fa-eye"></i>
-          See Templates
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="footer">
-  <div class="footer-grid">
-
-    <div class="footer-brand">
-      <span class="logo-script">weds.live</span>
-      <span class="logo-tagline">Digital Invitations, Made Beautiful</span>
-      <p class="footer-desc">
-        Create stunning digital invitations for your wedding, engagement, or reception. Share a beautiful link your guests will love — in minutes.
-      </p>
-      <div class="footer-social">
-        <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" class="social-btn" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
-        <a href="#" class="social-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-      </div>
-    </div>
-
-    <div>
-      <h4 class="footer-col-title">Product</h4>
-      <ul class="footer-links">
-        <li><a href="#templates">Templates</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#">How It Works</a></li>
-        <li><a href="#">Demo</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4 class="footer-col-title">Invitations</h4>
-      <ul class="footer-links">
-        <li><a href="#">Wedding</a></li>
-        <li><a href="#">Engagement</a></li>
-        <li><a href="#">Reception</a></li>
-        <li><a href="#">Akad Nikah</a></li>
-        <li><a href="#">Anniversary</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <h4 class="footer-col-title">Company</h4>
-      <ul class="footer-links">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Service</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p class="footer-copy">
-      &copy; 2025 <span>weds.live</span> · Made with <span>♥</span> for every love story
-    </p>
-    <div class="footer-legal">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Cookies</a>
-    </div>
-  </div>
-</footer>
-
-<!-- Scroll to top -->
-<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-  <i class="fa-solid fa-chevron-up"></i>
-</button>
-
-<!-- JS -->
-<script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
