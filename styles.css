@@ -139,68 +139,6 @@ body {
     transform: rotate(180deg);
 }
 
-/* Dropdown Menu */
-.dropdown-menu {
-    position: absolute;
-    top: calc(100% + 1rem);
-    left: 50%;
-    transform: translateX(-50%) translateY(-10px);
-    background: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    padding: 0.5rem;
-    min-width: 280px;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transition);
-    pointer-events: none;
-}
-
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
-    pointer-events: all;
-}
-
-.dropdown-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 0.875rem;
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--text-dark);
-    transition: var(--transition);
-}
-
-.dropdown-item:hover {
-    background: rgba(232, 84, 122, 0.06);
-}
-
-.dropdown-icon-wrapper {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(232, 84, 122, 0.1);
-    border-radius: 8px;
-    color: var(--primary-color);
-    flex-shrink: 0;
-}
-
-.dropdown-title {
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 0.25rem;
-}
-
-.dropdown-desc {
-    font-size: 0.8rem;
-    color: var(--text-light);
-}
-
 /* Nav Actions */
 .nav-actions {
     display: flex;
@@ -432,21 +370,6 @@ body.dark-mode .moon-icon {
 
     .nav-link {
         justify-content: center;
-    }
-
-    .dropdown-menu {
-        position: static;
-        transform: none;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-        box-shadow: none;
-        margin-top: 0.5rem;
-        display: none;
-    }
-
-    .dropdown.active .dropdown-menu {
-        display: block;
     }
 
     .nav-actions {
