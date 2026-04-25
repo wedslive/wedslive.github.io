@@ -294,7 +294,7 @@ body.dark-mode .moon-icon {
     font-weight: 400;
     font-size: clamp(3.2rem, 5.5vw, 5.2rem);
     color: #e8c88a;
-    margin-bottom: 0.1rem;
+    margin-bottom: 1.8rem;
     text-shadow: 0 2px 16px rgba(232, 200, 138, 0.25);
     line-height: 1.1;
 }
@@ -316,7 +316,7 @@ body.dark-mode .moon-icon {
     margin-bottom: 2.2rem;
     color: rgba(245, 221, 232, 0.78);
     line-height: 1.85;
-    max-width: 500px;
+    max-width: 540px;
 }
 
 /* CTA Buttons */
@@ -784,6 +784,7 @@ body.dark-mode .moon-icon {
     .hero-subtitle {
         margin-left: auto;
         margin-right: auto;
+        max-width: 340px;
     }
 
     .hero-buttons {
