@@ -1,3 +1,9 @@
+// Disable browser scroll restoration — always start at top
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 // Mobile Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -85,7 +91,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const sections = document.querySelectorAll('section[id]');
 let ticking = false;
 
-window.addEventListener('scroll', () => {
+function handleScroll() {
     if (!ticking) {
         requestAnimationFrame(() => {
             const currentScroll = window.pageYOffset;
@@ -113,4 +119,6 @@ window.addEventListener('scroll', () => {
         });
         ticking = true;
     }
-});
+}
+
+window.addEventListener('scroll', handleScroll);

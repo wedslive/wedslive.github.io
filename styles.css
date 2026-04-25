@@ -849,7 +849,7 @@ body.dark-mode .moon-icon {
     }
 
     .hero-container {
-        padding: calc(var(--nav-height) + 0.75rem) 20px 2.5rem;
+        padding: calc(var(--nav-height) + 0.25rem) 20px 2.5rem;
         gap: 2rem;
     }
 
