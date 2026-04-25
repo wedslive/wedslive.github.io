@@ -504,20 +504,6 @@ body.dark-mode .moon-icon {
     position: relative;
 }
 
-/* Dynamic Island */
-.iphone-island {
-    position: absolute;
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 110px;
-    height: 35px;
-    background: #000;
-    border-radius: 24px;
-    z-index: 10;
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
-}
-
 /* Screen content area */
 .iphone-content {
     width: 100%;
@@ -534,8 +520,8 @@ body.dark-mode .moon-icon {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 28px 6px;
-    margin-top: 52px;
+    padding: 14px 28px 6px;
+    margin-top: 0;
 }
 
 .iphone-time {
@@ -829,8 +815,7 @@ body.dark-mode .moon-icon {
     .iphone-btn-vol-up { top: calc(min(280px, 70vw) * 0.58); height: calc(min(280px, 70vw) * 0.21); }
     .iphone-btn-vol-down { top: calc(min(280px, 70vw) * 0.82); height: calc(min(280px, 70vw) * 0.21); }
     .iphone-btn-power { top: calc(min(280px, 70vw) * 0.62); height: calc(min(280px, 70vw) * 0.26); }
-    .iphone-island { width: calc(min(280px, 70vw) * 0.32); height: calc(min(280px, 70vw) * 0.1); top: calc(min(280px, 70vw) * 0.044); }
-    .iphone-status { margin-top: calc(min(280px, 70vw) * 0.155); }
+    .iphone-status { margin-top: 0; }
     .iphone-card-names { font-size: 2rem; }
     .iphone-card { gap: 6px; padding: 20px 16px 16px; }
 }
@@ -883,8 +868,7 @@ body.dark-mode .moon-icon {
     .iphone-btn-vol-up { top: calc(min(300px, 80vw) * 0.58); height: calc(min(300px, 80vw) * 0.21); }
     .iphone-btn-vol-down { top: calc(min(300px, 80vw) * 0.82); height: calc(min(300px, 80vw) * 0.21); }
     .iphone-btn-power { top: calc(min(300px, 80vw) * 0.62); height: calc(min(300px, 80vw) * 0.26); }
-    .iphone-island { width: calc(min(300px, 80vw) * 0.32); height: calc(min(300px, 80vw) * 0.1); top: calc(min(300px, 80vw) * 0.044); }
-    .iphone-status { margin-top: calc(min(300px, 80vw) * 0.155); }
+    .iphone-status { margin-top: 0; }
     .iphone-card-names { font-size: 2.2rem; }
     .iphone-card { gap: 7px; padding: 22px 18px 18px; }
 }
