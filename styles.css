@@ -37,7 +37,7 @@ body.dark-mode .dropdown-menu {
 }
 
 body.dark-mode .hero {
-    background: linear-gradient(135deg, #2d0f1e 0%, #1a0a0f 100%);
+    background: radial-gradient(ellipse at 30% 50%, #3a0e20 0%, #1a0a0f 45%, #0d0508 100%);
 }
 
 body {
@@ -239,94 +239,443 @@ body.dark-mode .moon-icon {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #3d1020 0%, #1a0a0f 60%, #2d0f1e 100%);
+    background: radial-gradient(ellipse at 30% 50%, #4a1228 0%, #2d0f1e 45%, #1a0a0f 100%);
     position: relative;
     overflow: hidden;
-    padding-top: var(--nav-height);
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
 }
 
 .hero-container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: calc(var(--nav-height) + 3rem) 40px 3rem;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 4rem;
     position: relative;
     z-index: 1;
 }
 
+/* ── LEFT: Text ── */
 .hero-content {
-    text-align: center;
+    text-align: left;
     color: #f9e8ee;
-    animation: fadeInUp 1s ease;
+    animation: fadeInUp 0.9s ease both;
 }
 
+/* Trust badge */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1.5px solid rgba(201, 160, 96, 0.55);
+    border-radius: 50px;
+    padding: 7px 18px;
+    margin-bottom: 1.8rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #c9a060;
+    background: rgba(201, 160, 96, 0.07);
+}
+
+.hero-badge-star { flex-shrink: 0; }
+
+/* Headline */
 .hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.4rem;
     line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.hero-title-script {
+    display: block;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+    color: #e8c88a;
+    margin-bottom: 0.1rem;
+    text-shadow: 0 2px 16px rgba(232, 200, 138, 0.25);
+    line-height: 1.1;
+}
+
+.hero-title-main {
+    display: block;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400;
+    color: #f5dde8;
+    line-height: 1.4;
+}
+
+.hero-title-main strong { font-weight: 700; }
+
+/* Subtitle */
 .hero-subtitle {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    margin-bottom: 2.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    opacity: 0.95;
-    line-height: 1.6;
+    font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+    margin-bottom: 2.2rem;
+    color: rgba(245, 221, 232, 0.78);
+    line-height: 1.85;
+    max-width: 500px;
 }
 
+/* CTA Buttons */
 .hero-buttons {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
+    gap: 0.9rem;
+    flex-direction: row;
+    align-items: center;
     flex-wrap: wrap;
+    margin-bottom: 2.5rem;
 }
 
 .btn {
-    padding: 0.875rem 2rem;
-    border-radius: 30px;
+    padding: 0.85rem 1.6rem;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
     transition: var(--transition);
-    display: inline-block;
-    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.95rem;
+    justify-content: center;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, #d4547a 0%, #b83060 100%);
     color: #ffffff;
-    box-shadow: 0 4px 15px rgba(232, 84, 122, 0.4);
+    box-shadow: 0 6px 24px rgba(180, 48, 96, 0.45);
+    border: none;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(232, 84, 122, 0.55);
+    box-shadow: 0 10px 30px rgba(180, 48, 96, 0.6);
 }
 
 .btn-secondary {
-    background: transparent;
-    color: #f9e8ee;
-    border: 2px solid rgba(249, 232, 238, 0.6);
+    background: rgba(255, 255, 255, 0.08);
+    color: #f5dde8;
+    border: 2px solid rgba(245, 221, 232, 0.35);
+    backdrop-filter: blur(6px);
 }
 
 .btn-secondary:hover {
-    background: rgba(249, 232, 238, 0.15);
-    border-color: #f9e8ee;
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(245, 221, 232, 0.65);
     transform: translateY(-3px);
+}
+
+/* Stats row */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding-top: 1.8rem;
+    border-top: 1px solid rgba(245, 221, 232, 0.12);
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-right: 1.8rem;
+}
+
+.hero-stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    font-weight: 700;
+    color: #c9a060;
+    line-height: 1;
+}
+
+.hero-stat-label {
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: rgba(245, 221, 232, 0.5);
+    text-transform: uppercase;
+}
+
+.hero-stat-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(245, 221, 232, 0.15);
+    flex-shrink: 0;
+    margin-right: 1.8rem;
+}
+
+/* ── RIGHT: iPhone Mockup ── */
+.hero-phone-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 0.9s ease 0.2s both;
+}
+
+.iphone {
+    position: relative;
+    width: 310px;
+    filter: drop-shadow(0 50px 90px rgba(0,0,0,0.75)) drop-shadow(0 0 50px rgba(180,48,96,0.3));
+}
+
+/* Outer titanium shell */
+.iphone-shell {
+    position: relative;
+    width: 310px;
+    height: 640px;
+    background: linear-gradient(160deg, #2a2a2e 0%, #1c1c1e 40%, #2a2a2e 100%);
+    border-radius: 58px;
+    padding: 13px;
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.12),
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        0 0 0 1px rgba(0,0,0,0.6),
+        0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Titanium frame edge highlight */
+.iphone-shell::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 58px;
+    background: linear-gradient(135deg,
+        rgba(255,255,255,0.15) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(255,255,255,0.06) 100%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Side buttons */
+.iphone-btn {
+    position: absolute;
+    background: linear-gradient(180deg, #3a3a3c, #2a2a2e);
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1), -1px 0 2px rgba(0,0,0,0.4);
+}
+
+.iphone-btn-silent {
+    left: -3px;
+    top: 124px;
+    width: 4px;
+    height: 36px;
+    border-radius: 2px 0 0 2px;
+}
+
+.iphone-btn-vol-up {
+    left: -3px;
+    top: 180px;
+    width: 4px;
+    height: 64px;
+    border-radius: 2px 0 0 2px;
+}
+
+.iphone-btn-vol-down {
+    left: -3px;
+    top: 256px;
+    width: 4px;
+    height: 64px;
+    border-radius: 2px 0 0 2px;
+}
+
+.iphone-btn-power {
+    right: -3px;
+    top: 192px;
+    width: 4px;
+    height: 82px;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Screen bezel */
+.iphone-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 47px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Dynamic Island */
+.iphone-island {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 33px;
+    background: #000;
+    border-radius: 22px;
+    z-index: 10;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
+}
+
+/* Screen content area */
+.iphone-content {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #1a0510 0%, #2d0f1e 50%, #1a0a0f 100%);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: relative;
+}
+
+/* Status bar */
+.iphone-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 26px 6px;
+    margin-top: 48px;
+}
+
+.iphone-time {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.02em;
+}
+
+.iphone-status-icons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Invitation card */
+.iphone-card {
+    flex: 1;
+    margin: 12px 16px 10px;
+    background: linear-gradient(160deg, #2d0f1e 0%, #1a0a0f 60%, #3d1020 100%);
+    border-radius: 24px;
+    border: 1px solid rgba(201,160,96,0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 20px 20px;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle radial glow inside card */
+.iphone-card::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(201,160,96,0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.iphone-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+.iphone-card-ornament {
+    color: #c9a060;
+    font-size: 0.65rem;
+    opacity: 0.7;
+}
+
+.iphone-card-invite {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: rgba(245,221,232,0.7);
+    letter-spacing: 0.05em;
+}
+
+.iphone-card-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.4rem;
+    color: #e8c88a;
+    line-height: 1.1;
+    text-shadow: 0 2px 12px rgba(232,200,138,0.3);
+}
+
+.iphone-card-date {
+    font-size: 0.72rem;
+    color: rgba(245,221,232,0.65);
+    letter-spacing: 0.08em;
+    font-family: 'Playfair Display', serif;
+}
+
+.iphone-card-divider {
+    width: 70px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,160,96,0.5), transparent);
+    margin: 4px 0;
+}
+
+.iphone-card-venue {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.65rem;
+    color: rgba(245,221,232,0.55);
+    letter-spacing: 0.03em;
+}
+
+.iphone-card-floral {
+    font-size: 1.6rem;
+    color: rgba(201,160,96,0.35);
+    margin: 2px 0;
+}
+
+.iphone-card-rsvp {
+    margin-top: 8px;
+    background: linear-gradient(135deg, #d4547a, #b83060);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 34px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(180,48,96,0.45);
+}
+
+/* Home indicator bar */
+.iphone-home-bar {
+    width: 110px;
+    height: 4px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 4px;
+    margin: 0 auto 12px;
+    flex-shrink: 0;
+}
+
+/* Glass sheen overlay */
+.iphone-sheen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(105deg,
+        rgba(255,255,255,0.07) 0%,
+        rgba(255,255,255,0.02) 40%,
+        transparent 60%);
+    border-radius: 58px;
+    pointer-events: none;
+    z-index: 5;
 }
 
 /* Animations */
@@ -413,18 +762,75 @@ body.dark-mode .moon-icon {
     }
 
     .hero {
-        padding: 2rem 0;
+        padding-top: var(--nav-height);
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        padding: calc(var(--nav-height) + 2rem) 24px 3rem;
+        gap: 2.5rem;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-badge {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-buttons {
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
     }
 
     .btn {
         width: 100%;
-        max-width: 300px;
+        max-width: 320px;
     }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-phone-wrap {
+        order: -1;
+    }
+
+    .iphone {
+        width: 230px;
+    }
+
+    .iphone-shell {
+        width: 230px;
+        height: 476px;
+        border-radius: 46px;
+    }
+
+    .iphone-screen {
+        border-radius: 36px;
+    }
+
+    .iphone-sheen {
+        border-radius: 46px;
+    }
+
+    .iphone-shell::before {
+        border-radius: 46px;
+    }
+
+    .iphone-btn-silent { top: 92px; height: 28px; }
+    .iphone-btn-vol-up { top: 134px; height: 48px; }
+    .iphone-btn-vol-down { top: 192px; height: 48px; }
+    .iphone-btn-power { top: 143px; height: 62px; }
+    .iphone-island { width: 78px; height: 26px; }
+    .iphone-card-names { font-size: 1.8rem; }
 }
 
 /* Mobile Styles */
@@ -441,18 +847,41 @@ body.dark-mode .moon-icon {
         font-size: 1.25rem;
     }
 
-    .hero-title {
-        font-size: 1.75rem;
+    .hero-container {
+        padding: calc(var(--nav-height) + 1.5rem) 20px 2.5rem;
+        gap: 2rem;
     }
 
-    .hero-subtitle {
-        font-size: 1rem;
+    .hero-badge {
+        font-size: 0.62rem;
+        padding: 6px 13px;
     }
 
-    .btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.9rem;
+    .iphone {
+        width: 210px;
     }
+
+    .iphone-shell {
+        width: 210px;
+        height: 434px;
+        border-radius: 42px;
+    }
+
+    .iphone-screen {
+        border-radius: 32px;
+    }
+
+    .iphone-sheen,
+    .iphone-shell::before {
+        border-radius: 42px;
+    }
+
+    .iphone-btn-silent { top: 84px; height: 26px; }
+    .iphone-btn-vol-up { top: 122px; height: 44px; }
+    .iphone-btn-vol-down { top: 176px; height: 44px; }
+    .iphone-btn-power { top: 130px; height: 56px; }
+    .iphone-island { width: 72px; height: 24px; }
+    .iphone-card-names { font-size: 1.6rem; }
 }
 
 /* Large Desktop */
