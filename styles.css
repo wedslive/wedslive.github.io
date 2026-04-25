@@ -399,6 +399,7 @@ body.dark-mode .moon-icon {
     letter-spacing: 0.1em;
     color: rgba(245, 221, 232, 0.5);
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .hero-stat-divider {
@@ -800,7 +801,7 @@ body.dark-mode .moon-icon {
     }
 
     .hero-phone-wrap {
-        order: -1;
+        order: 1;
     }
 
     /* Scale phone to fill ~70% of tablet width */
@@ -848,7 +849,7 @@ body.dark-mode .moon-icon {
     }
 
     .hero-container {
-        padding: calc(var(--nav-height) + 1.5rem) 20px 2.5rem;
+        padding: calc(var(--nav-height) + 0.75rem) 20px 2.5rem;
         gap: 2rem;
     }
 
