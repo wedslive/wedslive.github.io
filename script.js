@@ -123,15 +123,36 @@ function handleScroll() {
 
 window.addEventListener('scroll', handleScroll);
 
-// Live countdown to wedding date
+// Live countdown — always targets today + 47 days, updates daily
 (function() {
-    const weddingDate = new Date('2026-02-14T00:00:00');
+    const DAYS_AHEAD = 47;
+
+    const DAYS_OF_WEEK = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const MONTHS = ['January','February','March','April','May','June',
+                    'July','August','September','October','November','December'];
+
+    function getTargetDate() {
+        const t = new Date();
+        t.setHours(0, 0, 0, 0);
+        t.setDate(t.getDate() + DAYS_AHEAD);
+        return t;
+    }
+
+    function formatDate(d) {
+        const day = DAYS_OF_WEEK[d.getDay()].toUpperCase().slice(0, 3); // MON, TUE…
+        return `${day}, ${d.getDate()} ${MONTHS[d.getMonth()].toUpperCase().slice(0,3)} ${d.getFullYear()}`;
+    }
+
+    // Set the date label once
+    const dateEl = document.getElementById('cd-date');
+    if (dateEl) dateEl.textContent = formatDate(getTargetDate());
 
     function updateCountdown() {
         const now = new Date();
-        const diff = weddingDate - now;
-
-        if (diff <= 0) return;
+        const target = getTargetDate();
+        // target is midnight — add 24h so it counts to end of that day
+        target.setHours(23, 59, 59, 999);
+        const diff = target - now;
 
         const days = Math.floor(diff / (1000 * 60 * 60 * 24));
         const hrs  = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
