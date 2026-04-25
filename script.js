@@ -122,3 +122,35 @@ function handleScroll() {
 }
 
 window.addEventListener('scroll', handleScroll);
+
+// Live countdown to wedding date
+(function() {
+    const weddingDate = new Date('2026-02-14T00:00:00');
+
+    function updateCountdown() {
+        const now = new Date();
+        const diff = weddingDate - now;
+
+        if (diff <= 0) return;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hrs  = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const min  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const sec  = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const pad = n => String(n).padStart(2, '0');
+
+        const dEl = document.getElementById('cd-days');
+        const hEl = document.getElementById('cd-hrs');
+        const mEl = document.getElementById('cd-min');
+        const sEl = document.getElementById('cd-sec');
+
+        if (dEl) dEl.textContent = pad(days);
+        if (hEl) hEl.textContent = pad(hrs);
+        if (mEl) mEl.textContent = pad(min);
+        if (sEl) sEl.textContent = pad(sec);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+})();

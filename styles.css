@@ -515,41 +515,19 @@ body.dark-mode .moon-icon {
     position: relative;
 }
 
-/* Status bar */
-.iphone-status {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 28px 6px;
-    margin-top: 0;
-}
-
-.iphone-time {
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: -0.02em;
-}
-
-.iphone-status-icons {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
 /* Invitation card */
 .iphone-card {
     flex: 1;
-    margin: 12px 18px 12px;
+    margin: 0;
     background: linear-gradient(160deg, #2d0f1e 0%, #1a0a0f 60%, #3d1020 100%);
-    border-radius: 26px;
-    border: 1px solid rgba(201,160,96,0.25);
+    border-radius: 0;
+    border: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 28px 22px 22px;
-    gap: 9px;
+    justify-content: flex-start;
+    padding: 22px 16px 10px;
+    gap: 7px;
     position: relative;
     overflow: hidden;
 }
@@ -558,95 +536,166 @@ body.dark-mode .moon-icon {
 .iphone-card::before {
     content: '';
     position: absolute;
-    top: -30px;
+    top: -20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 220px;
-    height: 220px;
-    background: radial-gradient(circle, rgba(201,160,96,0.12) 0%, transparent 70%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(201,160,96,0.1) 0%, transparent 70%);
     pointer-events: none;
 }
 
-.iphone-card-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+/* Avatar */
+.iphone-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    padding: 2px;
+    background: linear-gradient(135deg, #c9a060, #e8547a);
+    flex-shrink: 0;
     margin-bottom: 2px;
 }
 
-.iphone-card-ornament {
-    color: #c9a060;
-    font-size: 0.65rem;
-    opacity: 0.7;
-}
-
-.iphone-card-invite {
-    font-family: 'Playfair Display', serif;
-    font-size: 0.78rem;
-    font-style: italic;
-    color: rgba(245,221,232,0.7);
-    letter-spacing: 0.05em;
+.iphone-avatar-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #2d0f1e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .iphone-card-names {
     font-family: 'Great Vibes', cursive;
-    font-size: 2.6rem;
+    font-size: 2rem;
     color: #e8c88a;
     line-height: 1.1;
     text-shadow: 0 2px 12px rgba(232,200,138,0.3);
 }
 
 .iphone-card-date {
-    font-size: 0.74rem;
-    color: rgba(245,221,232,0.65);
-    letter-spacing: 0.08em;
+    font-size: 0.58rem;
+    color: rgba(245,221,232,0.75);
+    letter-spacing: 0.1em;
     font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    text-align: center;
 }
 
 .iphone-card-divider {
-    width: 75px;
+    width: 60px;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(201,160,96,0.5), transparent);
-    margin: 4px 0;
-}
-
-.iphone-card-venue {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 0.67rem;
-    color: rgba(245,221,232,0.55);
-    letter-spacing: 0.03em;
-}
-
-.iphone-card-floral {
-    font-size: 1.7rem;
-    color: rgba(201,160,96,0.35);
     margin: 2px 0;
 }
 
+/* Countdown */
+.iphone-countdown-label {
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(245,221,232,0.5);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.iphone-countdown {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.iphone-countdown-box {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(201,160,96,0.2);
+    border-radius: 8px;
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 42px;
+}
+
+.iphone-countdown-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #c9a060;
+    line-height: 1;
+}
+
+.iphone-countdown-unit {
+    font-size: 0.45rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: rgba(245,221,232,0.5);
+    text-transform: uppercase;
+}
+
 .iphone-card-rsvp {
-    margin-top: 8px;
+    margin-top: 4px;
     background: linear-gradient(135deg, #d4547a, #b83060);
     color: #fff;
     border: none;
     border-radius: 50px;
-    padding: 11px 38px;
-    font-size: 0.72rem;
+    padding: 9px 32px;
+    font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     cursor: pointer;
     box-shadow: 0 4px 14px rgba(180,48,96,0.45);
 }
 
-/* Home indicator bar */
-.iphone-home-bar {
-    width: 120px;
-    height: 4px;
-    background: rgba(255,255,255,0.3);
-    border-radius: 4px;
-    margin: 0 auto 14px;
+/* Bottom nav bar */
+.iphone-nav {
+    display: flex;
+    flex-direction: column;
+    background: rgba(20, 5, 12, 0.95);
+    border-top: 1px solid rgba(201,160,96,0.15);
+    padding: 8px 6px 0;
+    margin: 0;
     flex-shrink: 0;
+}
+
+.iphone-nav-tabs {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.iphone-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: rgba(245,221,232,0.4);
+    font-size: 0.45rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    flex: 1;
+}
+
+.iphone-nav-item svg {
+    width: 16px;
+    height: 16px;
+}
+
+.iphone-nav-active {
+    color: #e8547a;
+}
+
+/* Home indicator inside nav */
+.iphone-home-bar {
+    width: 80px;
+    height: 3px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 4px;
+    margin: 6px auto 4px;
 }
 
 /* Glass sheen overlay */
@@ -815,7 +864,6 @@ body.dark-mode .moon-icon {
     .iphone-btn-vol-up { top: calc(min(280px, 70vw) * 0.58); height: calc(min(280px, 70vw) * 0.21); }
     .iphone-btn-vol-down { top: calc(min(280px, 70vw) * 0.82); height: calc(min(280px, 70vw) * 0.21); }
     .iphone-btn-power { top: calc(min(280px, 70vw) * 0.62); height: calc(min(280px, 70vw) * 0.26); }
-    .iphone-status { margin-top: 0; }
     .iphone-card-names { font-size: 2rem; }
     .iphone-card { gap: 6px; padding: 20px 16px 16px; }
 }
@@ -868,7 +916,6 @@ body.dark-mode .moon-icon {
     .iphone-btn-vol-up { top: calc(min(300px, 80vw) * 0.58); height: calc(min(300px, 80vw) * 0.21); }
     .iphone-btn-vol-down { top: calc(min(300px, 80vw) * 0.82); height: calc(min(300px, 80vw) * 0.21); }
     .iphone-btn-power { top: calc(min(300px, 80vw) * 0.62); height: calc(min(300px, 80vw) * 0.26); }
-    .iphone-status { margin-top: 0; }
     .iphone-card-names { font-size: 2.2rem; }
     .iphone-card { gap: 7px; padding: 22px 18px 18px; }
 }
