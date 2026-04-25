@@ -443,11 +443,31 @@ body.dark-mode .moon-icon {
     }
 
     .nav-actions {
+        display: flex;
+        order: 3;
+        margin-left: auto;
+    }
+
+    .theme-toggle {
         display: none;
+    }
+
+    .nav-cta {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+        border-radius: 8px;
+        gap: 0.25rem;
+    }
+
+    .nav-cta svg {
+        width: 12px;
+        height: 12px;
     }
 
     .hamburger {
         display: flex;
+        order: 4;
+        margin-left: 0.5rem;
     }
 
     .hamburger.active .bar:nth-child(1) {
