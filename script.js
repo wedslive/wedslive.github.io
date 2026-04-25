@@ -46,22 +46,6 @@ document.addEventListener('click', (e) => {
 const navbar = document.querySelector('.navbar');
 const navProgress = document.querySelector('.nav-progress');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    // Add scrolled class
-    if (currentScroll > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-
-    // Update progress bar
-    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (currentScroll / windowHeight) * 100;
-    navProgress.style.width = scrolled + '%';
-});
-
 // Theme Toggle
 const themeToggle = document.querySelector('.theme-toggle');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -97,23 +81,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add active state to current nav link
+// Merged scroll listener — navbar class, progress bar, active nav link
 const sections = document.querySelectorAll('section[id]');
+let ticking = false;
 
 window.addEventListener('scroll', () => {
-    const scrollY = window.pageYOffset;
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            const currentScroll = window.pageYOffset;
 
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+            // Navbar scrolled class
+            navbar.classList.toggle('scrolled', currentScroll > 50);
 
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            if (navLink) {
-                navLink.classList.add('active');
-            }
-        }
-    });
+            // Progress bar
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            navProgress.style.width = ((currentScroll / windowHeight) * 100) + '%';
+
+            // Active nav link
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+
+                if (currentScroll > sectionTop && currentScroll <= sectionTop + section.offsetHeight) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    if (navLink) navLink.classList.add('active');
+                }
+            });
+
+            ticking = false;
+        });
+        ticking = true;
+    }
 });
