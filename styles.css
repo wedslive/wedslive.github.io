@@ -400,7 +400,7 @@ body.dark-mode .moon-icon {
 @media screen and (max-width: 968px) {
     .nav-menu {
         position: fixed;
-        left: -100%;
+        right: -100%;
         top: var(--nav-height);
         flex-direction: column;
         background: var(--white);
@@ -415,7 +415,7 @@ body.dark-mode .moon-icon {
     }
 
     .nav-menu.active {
-        left: 0;
+        right: 0;
     }
 
     .nav-item {
