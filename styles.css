@@ -400,14 +400,14 @@ body.dark-mode .moon-icon {
 @media screen and (max-width: 968px) {
     .nav-menu {
         position: fixed;
-        right: -100%;
+        right: -70%;
         top: var(--nav-height);
         flex-direction: column;
         background: var(--white);
-        width: 100%;
+        width: 70%;
         text-align: center;
         transition: var(--transition);
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
         padding: 2rem 0;
         gap: 0;
         height: calc(100vh - var(--nav-height));
