@@ -91,6 +91,13 @@ body {
     transition: var(--transition);
 }
 
+.nav-logo-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
 .nav-logo a:hover svg {
     transform: scale(1.05) rotate(-5deg);
 }
