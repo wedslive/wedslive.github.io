@@ -56,8 +56,8 @@ const navProgress = document.querySelector('.nav-progress');
 const themeToggle = document.querySelector('.theme-toggle');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Check for saved theme preference or default to system preference
-const currentTheme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
 
 if (currentTheme === 'dark') {
     document.body.classList.add('dark-mode');
