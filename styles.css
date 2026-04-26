@@ -399,7 +399,6 @@ body.dark-mode .moon-icon {
     letter-spacing: 0.1em;
     color: rgba(245, 221, 232, 0.5);
     text-transform: uppercase;
-    white-space: nowrap;
 }
 
 .hero-stat-divider {
