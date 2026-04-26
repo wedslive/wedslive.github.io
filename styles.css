@@ -1033,15 +1033,21 @@ body.dark-mode .moon-icon {
 
 /* Brand column */
 .footer-logo-script {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.2rem;
-    background: linear-gradient(135deg, #e8547a, #c9a060);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f5dde8;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     margin-bottom: 0.25rem;
     text-decoration: none;
+}
+
+.footer-logo-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
 }
 
 .footer-logo-tagline {
