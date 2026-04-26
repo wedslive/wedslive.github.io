@@ -933,6 +933,95 @@ body.dark-mode .moon-icon {
     .iphone-card-rsvp { padding: 10px 32px; font-size: 0.65rem; }
 }
 
+/* CTA Section */
+.cta-section {
+    background: radial-gradient(ellipse at 50% 60%, #3a0e20 0%, #1a0a0f 50%, #0d0508 100%);
+    padding: 100px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 160, 96, 0.4), transparent);
+}
+
+.cta-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 160, 96, 0.4), transparent);
+}
+
+.cta-container {
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 400;
+    color: #e8c88a;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 20px rgba(232, 200, 138, 0.25);
+}
+
+.cta-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 500;
+    color: #f5dde8;
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
+}
+
+.cta-subtext {
+    font-size: clamp(0.9rem, 1.4vw, 1rem);
+    color: rgba(245, 221, 232, 0.65);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 480px) {
+    .cta-section {
+        padding: 70px 24px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .cta-subtext br {
+        display: none;
+    }
+}
+
 /* Large Desktop */
 @media screen and (min-width: 1400px) {
     .nav-container,
