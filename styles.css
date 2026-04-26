@@ -780,19 +780,11 @@ body.dark-mode .moon-icon {
     }
 
     .theme-toggle {
-        display: none;
+        display: flex;
     }
 
     .nav-cta {
-        padding: 0.4rem 0.75rem;
-        font-size: 0.8rem;
-        border-radius: 8px;
-        gap: 0.25rem;
-    }
-
-    .nav-cta svg {
-        width: 12px;
-        height: 12px;
+        display: none;
     }
 
     .hamburger {
