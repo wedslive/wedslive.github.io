@@ -1535,6 +1535,221 @@ body.dark-mode .feature-desc {
     }
 }
 
+/* Reviews Section */
+.reviews-section {
+    background: #f7f3f0;
+    padding: 96px 40px;
+}
+
+body.dark-mode .reviews-section {
+    background: #0d0508;
+}
+
+.reviews-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.review-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem 1.75rem;
+    border: 1px solid rgba(232, 84, 122, 0.08);
+    box-shadow: 0 2px 16px rgba(201, 116, 143, 0.07);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 48px rgba(201, 116, 143, 0.16);
+    border-color: rgba(232, 84, 122, 0.15);
+}
+
+body.dark-mode .review-card {
+    background: #1a0a0f;
+    border-color: rgba(232, 84, 122, 0.12);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .review-card:hover {
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+    border-color: rgba(232, 84, 122, 0.25);
+}
+
+.review-stars {
+    color: #c9a060;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+}
+
+.review-text {
+    font-size: 0.9rem;
+    color: #6b4a58;
+    line-height: 1.8;
+    flex: 1;
+    font-style: italic;
+}
+
+body.dark-mode .review-text {
+    color: rgba(245, 221, 232, 0.65);
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(232, 84, 122, 0.08);
+}
+
+body.dark-mode .review-author {
+    border-top-color: rgba(232, 84, 122, 0.12);
+}
+
+.review-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid rgba(201, 160, 96, 0.35);
+}
+
+.review-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.review-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.review-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2d0f1e;
+}
+
+body.dark-mode .review-name {
+    color: #f5dde8;
+}
+
+.review-location {
+    font-size: 0.72rem;
+    color: #9e7080;
+    letter-spacing: 0.04em;
+}
+
+body.dark-mode .review-location {
+    color: rgba(245, 221, 232, 0.4);
+}
+
+/* Trust bar */
+.reviews-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem 3rem;
+    border: 1px solid rgba(232, 84, 122, 0.08);
+    box-shadow: 0 2px 16px rgba(201, 116, 143, 0.07);
+}
+
+body.dark-mode .reviews-trust {
+    background: #1a0a0f;
+    border-color: rgba(232, 84, 122, 0.12);
+}
+
+.reviews-trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+}
+
+.reviews-trust-number {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.reviews-trust-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9e7080;
+}
+
+body.dark-mode .reviews-trust-label {
+    color: rgba(245, 221, 232, 0.45);
+}
+
+.reviews-trust-divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(232, 84, 122, 0.12);
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 968px) {
+    .reviews-section {
+        padding: 72px 24px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+
+    .reviews-trust {
+        padding: 1.75rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .reviews-section {
+        padding: 60px 20px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .reviews-trust {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.75rem;
+    }
+
+    .reviews-trust-divider {
+        width: 48px;
+        height: 1px;
+    }
+}
+
 /* CTA Section */
 .cta-section {
     background: linear-gradient(135deg, #2d1020 0%, #1a0a0f 50%, #2d1a08 100%);
@@ -1570,7 +1785,8 @@ body.dark-mode .feature-desc {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 0.5rem;
-    line-height: 1.2;
+    line-height: 1.4;
+    padding: 0.25rem 0;
 }
 
 .cta-title {
