@@ -268,6 +268,7 @@ body.dark-mode .moon-icon {
     text-align: left;
     color: #f9e8ee;
     animation: fadeInUp 0.9s ease both;
+    width: 100%;
 }
 
 /* Trust badge */
@@ -815,12 +816,17 @@ body.dark-mode .moon-icon {
 
     .hero-container {
         grid-template-columns: 1fr;
+        justify-items: center;
         padding: calc(var(--nav-height) + 2rem) 24px 3rem;
         gap: 2.5rem;
     }
 
     .hero-content {
-        text-align: center;
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     .hero-badge {
@@ -828,15 +834,22 @@ body.dark-mode .moon-icon {
         margin-right: auto;
     }
 
+    .hero-title {
+        width: 100%;
+        text-align: center;
+    }
+
     .hero-subtitle {
         margin-left: auto;
         margin-right: auto;
         max-width: 340px;
+        text-align: center;
     }
 
     .hero-buttons {
         align-items: center;
         flex-direction: column;
+        width: 100%;
     }
 
     .btn {
@@ -846,6 +859,7 @@ body.dark-mode .moon-icon {
 
     .hero-stats {
         justify-content: center;
+        width: 100%;
     }
 
     .hero-phone-wrap {
@@ -901,6 +915,12 @@ body.dark-mode .moon-icon {
     .hero-container {
         padding: calc(var(--nav-height) + 0.25rem) 20px 2.5rem;
         gap: 2rem;
+        justify-items: center;
+    }
+
+    .hero-content {
+        text-align: center !important;
+        align-items: center;
     }
 
     .hero-badge {
