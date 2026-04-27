@@ -86,11 +86,36 @@
             color: #2d0f1e;
             background: #FAF7F6;
             overflow-x: hidden;
-            visibility: hidden;
+            /* REMOVED visibility: hidden - was causing blank page if JS fails */
         }
         
-        body.loaded {
-            visibility: visible;
+        /* Only fade in content, don't hide completely */
+        body:not(.loaded) .hero,
+        body:not(.loaded) .how-section,
+        body:not(.loaded) .templates-section,
+        body:not(.loaded) .features-section,
+        body:not(.loaded) .reviews-section,
+        body:not(.loaded) .pricing-section,
+        body:not(.loaded) .cta-section,
+        body:not(.loaded) .footer {
+            opacity: 0;
+        }
+        
+        body.loaded .hero,
+        body.loaded .how-section,
+        body.loaded .templates-section,
+        body.loaded .features-section,
+        body.loaded .reviews-section,
+        body.loaded .pricing-section,
+        body.loaded .cta-section,
+        body.loaded .footer {
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
+        
+        /* Navbar always visible */
+        .navbar {
+            opacity: 1;
         }
         
         /* Loading spinner */
@@ -105,7 +130,9 @@
             align-items: center;
             justify-content: center;
             z-index: 9999;
+            opacity: 1;
             transition: opacity 0.3s ease, visibility 0.3s ease;
+            pointer-events: none;
         }
         
         body.loaded .page-loader {
@@ -125,11 +152,27 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+        
+        /* CSS-only fallback: Show content after 2s even if JS fails */
+        @keyframes forceShow {
+            to { opacity: 1; }
+        }
+        
+        body:not(.loaded) .hero,
+        body:not(.loaded) .how-section,
+        body:not(.loaded) .templates-section,
+        body:not(.loaded) .features-section,
+        body:not(.loaded) .reviews-section,
+        body:not(.loaded) .pricing-section,
+        body:not(.loaded) .cta-section,
+        body:not(.loaded) .footer {
+            animation: forceShow 0.3s ease-in 2s forwards;
+        }
     </style>
     
     <!-- Preload critical CSS -->
-    <link rel="preload" href="styles.css?v=27" as="style">
-    <link rel="stylesheet" href="styles.css?v=27">
+    <link rel="preload" href="styles.css?v=28" as="style">
+    <link rel="stylesheet" href="styles.css?v=28">
     
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
