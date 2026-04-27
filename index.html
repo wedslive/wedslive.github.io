@@ -3,13 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weds.live — Beautiful Digital Wedding Invitations</title>
+    <title>weds.live — Beautiful Digital Wedding Invitations | Create & Share in Minutes</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Create stunning digital wedding invitations in minutes. Choose from 50+ beautiful templates, share instantly via WhatsApp. Trusted by 10,000+ Indian couples. Free to start!">
+    <meta name="keywords" content="digital wedding invitation, online wedding card, e-invitation, wedding invite maker, Indian wedding invitation, engagement invitation">
+    <meta name="author" content="weds.live">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://weds.live/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weds.live/">
+    <meta property="og:title" content="weds.live — Beautiful Digital Wedding Invitations">
+    <meta property="og:description" content="Create stunning digital wedding invitations in minutes. Choose from 50+ beautiful templates, share instantly via WhatsApp. Trusted by 10,000+ Indian couples.">
+    <meta property="og:image" content="https://weds.live/og-image.jpg">
+    <meta property="og:site_name" content="weds.live">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://weds.live/">
+    <meta name="twitter:title" content="weds.live — Beautiful Digital Wedding Invitations">
+    <meta name="twitter:description" content="Create stunning digital wedding invitations in minutes. Choose from 50+ beautiful templates, share instantly via WhatsApp.">
+    <meta name="twitter:image" content="https://weds.live/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="lotus-logo.svg">
+    <link rel="apple-touch-icon" href="lotus-logo.svg">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#e8547a">
+    <meta name="msapplication-TileColor" content="#e8547a">
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "weds.live",
+        "url": "https://weds.live/",
+        "description": "Create stunning digital wedding invitations in minutes. Choose from 50+ beautiful templates, share instantly via WhatsApp.",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "10000",
+            "bestRating": "5",
+            "worstRating": "1"
+        },
+        "creator": {
+            "@type": "Organization",
+            "name": "weds.live",
+            "url": "https://weds.live/"
+        }
+    }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical CSS to prevent FOUC -->
+    <style>
+        /* Prevent flash of unstyled content */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2d0f1e;
+            background: #FAF7F6;
+            overflow-x: hidden;
+            visibility: hidden;
+        }
+        
+        body.loaded {
+            visibility: visible;
+        }
+        
+        /* Loading spinner */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #FAF7F6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        body.loaded .page-loader {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(232, 84, 122, 0.2);
+            border-top-color: #e8547a;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="styles.css?v=26" as="style">
+    <link rel="stylesheet" href="styles.css?v=26">
+    
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=25">
+
+
 </head>
 <body>
+    <!-- Page loader -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+    
+    <!-- Skip to content link for accessibility -->
+    <a href="#home" class="skip-to-content">Skip to main content</a>
+    
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -121,17 +255,17 @@
                 <!-- Stats row -->
                 <div class="hero-stats">
                     <div class="hero-stat">
-                        <span class="hero-stat-number">10,000+</span>
+                        <span class="hero-stat-number" data-stat="invitationsSent">10,000+</span>
                         <span class="hero-stat-label">INVITATIONS SENT</span>
                     </div>
                     <div class="hero-stat-divider" aria-hidden="true"></div>
                     <div class="hero-stat">
-                        <span class="hero-stat-number">50+</span>
+                        <span class="hero-stat-number" data-stat="templates">50+</span>
                         <span class="hero-stat-label">TEMPLATES</span>
                     </div>
                     <div class="hero-stat-divider" aria-hidden="true"></div>
                     <div class="hero-stat">
-                        <span class="hero-stat-number">98%</span>
+                        <span class="hero-stat-number" data-stat="satisfaction">98%</span>
                         <span class="hero-stat-label">HAPPY COUPLES</span>
                     </div>
                 </div>
@@ -465,6 +599,12 @@
                     </div>
                 </div>
 
+                <!-- No results message (hidden by default) -->
+                <div class="templates-no-results" style="display: none;">
+                    <h3>No templates found</h3>
+                    <p>Try selecting a different category to see more templates.</p>
+                </div>
+
             </div>
 
             <!-- Bottom CTA -->
@@ -723,17 +863,17 @@
             <!-- Trust bar -->
             <div class="reviews-trust">
                 <div class="reviews-trust-item">
-                    <span class="reviews-trust-number">10,000+</span>
+                    <span class="reviews-trust-number" data-stat="happyCouples">10,000+</span>
                     <span class="reviews-trust-label">Happy Couples</span>
                 </div>
                 <div class="reviews-trust-divider"></div>
                 <div class="reviews-trust-item">
-                    <span class="reviews-trust-number">4.9 / 5</span>
+                    <span class="reviews-trust-number" data-stat="averageRating">4.9 / 5</span>
                     <span class="reviews-trust-label">Average Rating</span>
                 </div>
                 <div class="reviews-trust-divider"></div>
                 <div class="reviews-trust-item">
-                    <span class="reviews-trust-number">98%</span>
+                    <span class="reviews-trust-number" data-stat="satisfaction">98%</span>
                     <span class="reviews-trust-label">Would Recommend</span>
                 </div>
             </div>
@@ -966,7 +1106,8 @@
                     <li><a href="#">Wedding</a></li>
                     <li><a href="#">Engagement</a></li>
                     <li><a href="#">Akad Nikah</a></li>
-                    <li><a href="#">Anniversary</a></li>
+                    <li><a href="#">Reception</a></li>
+                    <li><a href="#">Sangeet</a></li>
                 </ul>
             </div>
 
@@ -995,6 +1136,7 @@
         </div>
     </footer>
 
+    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

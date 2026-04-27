@@ -8,6 +8,7 @@
 :root {
     --primary-color: #e8547a;
     --secondary-color: #c94070;
+    --accent-gold: #c9a060;
     --text-dark: #2d0f1e;
     --text-light: #6b4a58;
     --white: #FAF7F6;
@@ -18,6 +19,11 @@
     --border-light: rgba(45, 15, 30, 0.08);
     --shadow-light: 0 4px 20px rgba(45, 15, 30, 0.04);
     --shadow-hover: 0 8px 32px rgba(45, 15, 30, 0.08);
+    
+    /* Gradient presets */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-gold: linear-gradient(135deg, #c9a060, #e8547a, #c9a060);
+    --gradient-hero: radial-gradient(ellipse at 30% 50%, #4a1228 0%, #2d0f1e 45%, #1a0a0f 100%);
 }
 
 body.dark-mode {
@@ -189,7 +195,7 @@ body.dark-mode .moon-icon {
 }
 
 .nav-cta {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-primary);
     color: #ffffff !important;
     padding: 0.625rem 1.5rem;
     border-radius: 10px;
@@ -249,7 +255,7 @@ body.dark-mode .moon-icon {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: radial-gradient(ellipse at 30% 50%, #4a1228 0%, #2d0f1e 45%, #1a0a0f 100%);
+    background: var(--gradient-hero);
     position: relative;
     overflow: hidden;
 }
@@ -408,7 +414,7 @@ body.dark-mode .moon-icon {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #d4547a 0%, #b83060 100%);
+    background: var(--gradient-primary);
     color: #ffffff;
     box-shadow: 0 6px 24px rgba(180, 48, 96, 0.5), 0 0 0 1px rgba(255,255,255,0.06) inset;
     border: none;
@@ -649,7 +655,7 @@ body.dark-mode .moon-icon {
     height: 96px;
     border-radius: 50%;
     padding: 3px;
-    background: linear-gradient(135deg, #c9a060, #e8547a, #c9a060);
+    background: var(--gradient-gold);
     flex-shrink: 0;
     margin-bottom: 10px;
     box-shadow: 0 0 20px rgba(201,160,96,0.35), 0 0 40px rgba(180,48,96,0.2);
@@ -828,6 +834,23 @@ body.dark-mode .moon-icon {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .hero-content,
+    .hero-phone-wrap {
+        animation: none;
     }
 }
 
@@ -1294,6 +1317,35 @@ body.dark-mode .filter-btn {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-bottom: 3rem;
+    min-height: 300px;
+}
+
+/* No results message */
+.templates-no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-light);
+}
+
+.templates-no-results h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+body.dark-mode .templates-no-results h3 {
+    color: #f5dde8;
+}
+
+.templates-no-results p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+body.dark-mode .templates-no-results {
+    color: rgba(245, 221, 232, 0.5);
 }
 
 .template-card {
@@ -1324,7 +1376,7 @@ body.dark-mode .template-card {
 }
 
 .tpl-1 { background: linear-gradient(160deg, #1a0a0f 0%, #3d1a2a 50%, rgba(201,116,143,0.2) 100%); }
-.tpl-2 { background: linear-gradient(160deg, #0a1628 0%, #1a2d4a 50%, rgba(201,169,110,0.2) 100%); }
+.tpl-2 { background: linear-gradient(160deg, #0a0f1a 0%, #1a2a3d 50%, rgba(116,143,201,0.2) 100%); }
 .tpl-3 { background: linear-gradient(160deg, #0d1f0d 0%, #1a3a1a 50%, rgba(122,184,122,0.2) 100%); }
 .tpl-4 { background: linear-gradient(160deg, #1a1428 0%, #2d2050 50%, rgba(155,127,212,0.2) 100%); }
 .tpl-5 { background: linear-gradient(160deg, #1f1208 0%, #3d2410 50%, rgba(212,165,122,0.2) 100%); }
@@ -1929,7 +1981,7 @@ body.dark-mode .pricing-card-popular {
     top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-primary);
     color: #fff;
     padding: 0.35rem 1rem;
     border-radius: 50px;
@@ -2039,7 +2091,7 @@ body.dark-mode .pricing-features li {
 }
 
 .pricing-cta-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--gradient-primary);
     color: #fff;
     border: none;
     box-shadow: 0 6px 24px rgba(232, 84, 122, 0.35);
@@ -2423,5 +2475,64 @@ body.dark-mode .pricing-features li {
     .footer-container,
     .footer-bottom {
         max-width: 1400px;
+    }
+}
+
+/* Focus visible styles for keyboard navigation */
+*:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible,
+.filter-btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 10000;
+    border-radius: 0 0 8px 0;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* Screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Browser compatibility fallbacks */
+@supports not (backdrop-filter: blur(20px)) {
+    .navbar {
+        background: rgba(250, 247, 246, 0.98);
+    }
+    
+    body.dark-mode .navbar {
+        background: rgba(26, 10, 15, 0.98);
+    }
+    
+    .btn-secondary {
+        background: rgba(255, 255, 255, 0.15);
     }
 }
