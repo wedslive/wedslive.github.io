@@ -196,7 +196,7 @@ body.dark-mode .moon-icon {
 
 .nav-cta {
     background: var(--gradient-primary);
-    color: #ffffff !important;
+    color: #ffffff;
     padding: 0.625rem 1.5rem;
     border-radius: 10px;
     transition: var(--transition);
@@ -333,6 +333,8 @@ body.dark-mode .moon-icon {
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(201, 160, 96, 0.18), transparent);
     animation: badgeShimmer 3s ease-in-out infinite;
+    will-change: left;
+    pointer-events: none;
 }
 
 @keyframes badgeShimmer {
@@ -837,20 +839,32 @@ body.dark-mode .moon-icon {
     }
 }
 
-/* Reduced motion support */
+/* Reduced motion support - respects user preferences */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-    
+    /* Disable motion animations for users who prefer reduced motion */
     .hero-content,
     .hero-phone-wrap {
         animation: none;
+    }
+    
+    /* Reduce transition speeds for interactive elements */
+    .btn,
+    .nav-link,
+    .template-card,
+    .feature-card,
+    .review-card,
+    .pricing-card {
+        transition-duration: 0.01ms;
+    }
+    
+    /* Disable smooth scrolling */
+    * {
+        scroll-behavior: auto;
+    }
+    
+    /* Allow decorative animations like badge shimmer to continue */
+    .hero-badge::after {
+        animation: badgeShimmer 3s ease-in-out infinite;
     }
 }
 
