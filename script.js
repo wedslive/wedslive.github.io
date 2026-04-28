@@ -195,3 +195,113 @@ filterBtns.forEach(btn => {
         });
     });
 });
+
+// Interactive Timeline - How It Works Section
+(function() {
+    const timelineSteps = document.querySelectorAll('.timeline-step');
+    const progressFill = document.querySelector('.timeline-progress-fill');
+    const progressMarkers = document.querySelectorAll('.timeline-marker');
+    
+    if (!timelineSteps.length) return;
+
+    // Step durations in minutes (for progress calculation)
+    const stepDurations = [2, 4, 1, 0]; // Step 4 is "Forever" so 0
+    const totalDuration = stepDurations.reduce((a, b) => a + b, 0);
+
+    // Calculate progress percentage for each step
+    function getProgressForStep(stepIndex) {
+        let cumulativeDuration = 0;
+        for (let i = 0; i <= stepIndex; i++) {
+            cumulativeDuration += stepDurations[i];
+        }
+        return (cumulativeDuration / totalDuration) * 100;
+    }
+
+    // Activate step and update progress
+    function activateStep(index) {
+        // Remove active from all steps
+        timelineSteps.forEach(step => step.classList.remove('active'));
+        progressMarkers.forEach(marker => marker.classList.remove('active'));
+
+        // Activate current and previous steps
+        for (let i = 0; i <= index; i++) {
+            timelineSteps[i].classList.add('active');
+            progressMarkers[i].classList.add('active');
+        }
+
+        // Update progress bar
+        const progress = getProgressForStep(index);
+        progressFill.style.width = progress + '%';
+    }
+
+    // Intersection Observer for scroll-based activation
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -20% 0px',
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const stepIndex = parseInt(entry.target.dataset.step) - 1;
+                activateStep(stepIndex);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all timeline steps
+    timelineSteps.forEach(step => {
+        observer.observe(step);
+    });
+
+    // Click handlers for manual interaction
+    timelineSteps.forEach((step, index) => {
+        step.addEventListener('click', () => {
+            activateStep(index);
+            // Smooth scroll to step
+            step.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    });
+
+    // Copy link functionality for Step 3
+    const copyBtn = document.querySelector('.timeline-link-copy');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+            const linkUrl = document.querySelector('.timeline-link-url');
+            if (linkUrl) {
+                // Copy to clipboard
+                navigator.clipboard.writeText(linkUrl.textContent).then(() => {
+                    // Visual feedback
+                    const originalHTML = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+                    copyBtn.style.background = '#25d366';
+                    
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalHTML;
+                        copyBtn.style.background = '';
+                    }, 2000);
+                }).catch(err => {
+                    console.log('Copy failed:', err);
+                });
+            }
+        });
+    }
+
+    // Share button interactions
+    const shareButtons = document.querySelectorAll('.timeline-share-btn');
+    shareButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Add ripple effect
+            btn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                btn.style.transform = '';
+            }, 150);
+        });
+    });
+
+    // Initialize first step as active on page load
+    setTimeout(() => {
+        activateStep(0);
+    }, 300);
+})();
