@@ -4,126 +4,130 @@ if ('scrollRestoration' in history) {
 }
 window.scrollTo(0, 0);
 
+// Footer year — auto-update so the copyright never goes stale
+const footerYearEl = document.getElementById('footer-year');
+if (footerYearEl) footerYearEl.textContent = new Date().getFullYear();
+
 // Mobile Menu Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
-const dropdowns = document.querySelectorAll('.dropdown');
 
-// Toggle mobile menu
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-});
+function setMenuOpen(open) {
+    if (!hamburger || !navMenu) return;
+    hamburger.classList.toggle('active', open);
+    navMenu.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+}
 
-// Mobile dropdown toggle
-dropdowns.forEach(dropdown => {
-    const link = dropdown.querySelector('.nav-link');
-    link.addEventListener('click', (e) => {
-        if (window.innerWidth <= 968) {
-            e.preventDefault();
-            dropdown.classList.toggle('active');
-        }
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        const isOpen = navMenu.classList.contains('active');
+        setMenuOpen(!isOpen);
     });
-});
+}
 
 // Close mobile menu when clicking on a link
 navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        if (!link.closest('.dropdown') || window.innerWidth > 968) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 968) setMenuOpen(false);
     });
 });
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', (e) => {
+    if (!hamburger || !navMenu) return;
     if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.style.overflow = '';
+        setMenuOpen(false);
     }
 });
 
-// Navbar scroll effect with class toggle
-const navbar = document.querySelector('.navbar');
-const navProgress = document.querySelector('.nav-progress');
+// Close menu on Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
+        setMenuOpen(false);
+        if (hamburger) hamburger.focus();
+    }
+});
 
 // Theme Toggle
 const themeToggle = document.querySelector('.theme-toggle');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Check for saved theme preference or default to light mode
-const currentTheme = localStorage.getItem('theme') || 'light';
+// Sync state set by the pre-paint inline script in <head>
+function syncThemeAria() {
+    if (!themeToggle) return;
+    const isDark = document.body.classList.contains('dark-mode');
+    themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+}
+syncThemeAria();
 
-if (currentTheme === 'dark') {
-    document.body.classList.add('dark-mode');
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+        try { localStorage.setItem('theme', theme); } catch (e) {}
+        syncThemeAria();
+    });
 }
 
-themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme);
-});
-
-// Smooth scrolling for anchor links
+// Smooth scroll handled by CSS (`html { scroll-behavior: smooth }`).
+// JS scroll only used to offset for the fixed navbar.
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#' || href.length < 2) return;
+        const target = document.querySelector(href);
+        if (!target) return;
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        
-        if (target) {
-            const navHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = target.offsetTop - navHeight;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
+        const navHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+        window.scrollTo({
+            top: target.offsetTop - navHeight,
+            behavior: 'smooth'
+        });
     });
 });
 
 // Merged scroll listener — navbar class, progress bar, active nav link
+const navbar = document.querySelector('.navbar');
+const navProgress = document.querySelector('.nav-progress');
 const sections = document.querySelectorAll('section[id]');
 let ticking = false;
 
 function handleScroll() {
-    if (!ticking) {
-        requestAnimationFrame(() => {
-            const currentScroll = window.pageYOffset;
+    if (ticking) return;
+    requestAnimationFrame(() => {
+        const currentScroll = window.pageYOffset;
 
-            // Navbar scrolled class
-            navbar.classList.toggle('scrolled', currentScroll > 50);
+        if (navbar) navbar.classList.toggle('scrolled', currentScroll > 50);
 
-            // Progress bar
+        if (navProgress) {
             const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            navProgress.style.width = ((currentScroll / windowHeight) * 100) + '%';
+            const pct = windowHeight > 0 ? (currentScroll / windowHeight) * 100 : 0;
+            navProgress.style.width = pct + '%';
+        }
 
-            // Active nav link
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionId = section.getAttribute('id');
-                const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-
-                if (currentScroll > sectionTop && currentScroll <= sectionTop + section.offsetHeight) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    if (navLink) navLink.classList.add('active');
-                }
-            });
-
-            ticking = false;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute('id');
+            const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+            if (!navLink) return;
+            if (currentScroll > sectionTop && currentScroll <= sectionTop + section.offsetHeight) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                navLink.classList.add('active');
+            }
         });
-        ticking = true;
-    }
+
+        ticking = false;
+    });
+    ticking = true;
 }
 
-window.addEventListener('scroll', handleScroll);
+window.addEventListener('scroll', handleScroll, { passive: true });
 
-// Live countdown — always targets today + 47 days, updates daily
+// Live countdown — always targets today + 47 days, updates every second when visible
 (function() {
     const DAYS_AHEAD = 47;
 
@@ -139,32 +143,32 @@ window.addEventListener('scroll', handleScroll);
     }
 
     function formatDate(d) {
-        const day = DAYS_OF_WEEK[d.getDay()].toUpperCase().slice(0, 3); // MON, TUE…
+        const day = DAYS_OF_WEEK[d.getDay()].toUpperCase().slice(0, 3);
         return `${day}, ${d.getDate()} ${MONTHS[d.getMonth()].toUpperCase().slice(0,3)} ${d.getFullYear()}`;
     }
 
-    // Set the date label once
     const dateEl = document.getElementById('cd-date');
     if (dateEl) dateEl.textContent = formatDate(getTargetDate());
+
+    const dEl = document.getElementById('cd-days');
+    const hEl = document.getElementById('cd-hrs');
+    const mEl = document.getElementById('cd-min');
+    const sEl = document.getElementById('cd-sec');
+
+    if (!dEl && !hEl && !mEl && !sEl) return;
+
+    const pad = n => String(n).padStart(2, '0');
 
     function updateCountdown() {
         const now = new Date();
         const target = getTargetDate();
-        // target is midnight — add 24h so it counts to end of that day
         target.setHours(23, 59, 59, 999);
         const diff = target - now;
 
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hrs  = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const min  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const sec  = Math.floor((diff % (1000 * 60)) / 1000);
-
-        const pad = n => String(n).padStart(2, '0');
-
-        const dEl = document.getElementById('cd-days');
-        const hEl = document.getElementById('cd-hrs');
-        const mEl = document.getElementById('cd-min');
-        const sEl = document.getElementById('cd-sec');
+        const days = Math.max(0, Math.floor(diff / (1000 * 60 * 60 * 24)));
+        const hrs  = Math.max(0, Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+        const min  = Math.max(0, Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)));
+        const sec  = Math.max(0, Math.floor((diff % (1000 * 60)) / 1000));
 
         if (dEl) dEl.textContent = pad(days);
         if (hEl) hEl.textContent = pad(hrs);
@@ -172,8 +176,20 @@ window.addEventListener('scroll', handleScroll);
         if (sEl) sEl.textContent = pad(sec);
     }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    let timer = null;
+    function start() {
+        updateCountdown();
+        if (timer) clearInterval(timer);
+        timer = setInterval(updateCountdown, 1000);
+    }
+    function stop() {
+        if (timer) { clearInterval(timer); timer = null; }
+    }
+
+    start();
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop(); else start();
+    });
 })();
 
 // Template filter
@@ -187,121 +203,8 @@ filterBtns.forEach(btn => {
 
         const filter = btn.dataset.filter;
         templateCards.forEach(card => {
-            if (filter === 'all' || card.dataset.category === filter) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+            const show = filter === 'all' || card.dataset.category === filter;
+            card.style.display = show ? '' : 'none';
         });
     });
 });
-
-// Interactive Timeline - How It Works Section
-(function() {
-    const timelineSteps = document.querySelectorAll('.timeline-step');
-    const progressFill = document.querySelector('.timeline-progress-fill');
-    const progressMarkers = document.querySelectorAll('.timeline-marker');
-    
-    if (!timelineSteps.length) return;
-
-    // Step durations in minutes (for progress calculation)
-    const stepDurations = [2, 4, 1, 0]; // Step 4 is "Forever" so 0
-    const totalDuration = stepDurations.reduce((a, b) => a + b, 0);
-
-    // Calculate progress percentage for each step
-    function getProgressForStep(stepIndex) {
-        let cumulativeDuration = 0;
-        for (let i = 0; i <= stepIndex; i++) {
-            cumulativeDuration += stepDurations[i];
-        }
-        return (cumulativeDuration / totalDuration) * 100;
-    }
-
-    // Activate step and update progress
-    function activateStep(index) {
-        // Remove active from all steps
-        timelineSteps.forEach(step => step.classList.remove('active'));
-        progressMarkers.forEach(marker => marker.classList.remove('active'));
-
-        // Activate current and previous steps
-        for (let i = 0; i <= index; i++) {
-            timelineSteps[i].classList.add('active');
-            progressMarkers[i].classList.add('active');
-        }
-
-        // Update progress bar
-        const progress = getProgressForStep(index);
-        progressFill.style.width = progress + '%';
-    }
-
-    // Intersection Observer for scroll-based activation
-    const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -20% 0px',
-        threshold: 0.5
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const stepIndex = parseInt(entry.target.dataset.step) - 1;
-                activateStep(stepIndex);
-            }
-        });
-    }, observerOptions);
-
-    // Observe all timeline steps
-    timelineSteps.forEach(step => {
-        observer.observe(step);
-    });
-
-    // Click handlers for manual interaction
-    timelineSteps.forEach((step, index) => {
-        step.addEventListener('click', () => {
-            activateStep(index);
-            // Smooth scroll to step
-            step.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-    });
-
-    // Copy link functionality for Step 3
-    const copyBtn = document.querySelector('.timeline-link-copy');
-    if (copyBtn) {
-        copyBtn.addEventListener('click', () => {
-            const linkUrl = document.querySelector('.timeline-link-url');
-            if (linkUrl) {
-                // Copy to clipboard
-                navigator.clipboard.writeText(linkUrl.textContent).then(() => {
-                    // Visual feedback
-                    const originalHTML = copyBtn.innerHTML;
-                    copyBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-                    copyBtn.style.background = '#25d366';
-                    
-                    setTimeout(() => {
-                        copyBtn.innerHTML = originalHTML;
-                        copyBtn.style.background = '';
-                    }, 2000);
-                }).catch(err => {
-                    console.log('Copy failed:', err);
-                });
-            }
-        });
-    }
-
-    // Share button interactions
-    const shareButtons = document.querySelectorAll('.timeline-share-btn');
-    shareButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Add ripple effect
-            btn.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                btn.style.transform = '';
-            }, 150);
-        });
-    });
-
-    // Initialize first step as active on page load
-    setTimeout(() => {
-        activateStep(0);
-    }, 300);
-})();

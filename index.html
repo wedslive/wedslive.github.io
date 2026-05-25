@@ -3,13 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weds.live — Beautiful Digital Wedding Invitations</title>
+
+    <!-- Primary SEO -->
+    <title>weds.live — Digital Wedding & Engagement Invitations for Indian Couples</title>
+    <meta name="description" content="Create beautiful digital wedding and engagement invitations in minutes. 50+ Indian-inspired templates, RSVP, live countdown, photo gallery and a custom weds.live link to share with every guest.">
+    <meta name="keywords" content="digital wedding invitation, indian wedding invite, e-invite, online wedding card, engagement invitation, weds.live">
+    <meta name="theme-color" content="#e8547a">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://weds.live/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="lotus-logo.svg">
+    <link rel="apple-touch-icon" href="lotus-logo.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="weds.live">
+    <meta property="og:title" content="weds.live — Digital Wedding & Engagement Invitations">
+    <meta property="og:description" content="Beautiful digital invitations for your wedding or engagement, ready in minutes. Share a personalised link your guests will love.">
+    <meta property="og:url" content="https://weds.live/">
+    <meta property="og:image" content="https://weds.live/lotus-logo.svg">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="weds.live — Digital Wedding & Engagement Invitations">
+    <meta name="twitter:description" content="Beautiful digital invitations for your wedding or engagement, ready in minutes.">
+    <meta name="twitter:image" content="https://weds.live/lotus-logo.svg">
+
+    <!-- Performance: connect to font + image hosts early -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=30">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+
+    <!-- Fonts: trimmed to weights actually used -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css?v=34">
+
+    <!-- App script (deferred so it doesn't block render) -->
+    <script src="script.js?v=3" defer></script>
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "weds.live",
+        "url": "https://weds.live/",
+        "description": "Digital wedding and engagement invitations for Indian couples.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "weds.live",
+            "url": "https://weds.live/",
+            "logo": "https://weds.live/lotus-logo.svg"
+        }
+    }
+    </script>
 </head>
 <body>
+    <!-- Apply saved theme before first paint to prevent flash -->
+    <script>try{if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');}catch(e){}</script>
+
+    <!-- Skip to main content (keyboard / screen reader users) -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
@@ -20,15 +79,15 @@
                 </a>
             </div>
             
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="primary-nav">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#how-it-works" class="nav-link">How It Works</a>
+                    <a href="#templates" class="nav-link">Templates</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#templates" class="nav-link">Templates</a>
+                    <a href="#how-it-works" class="nav-link">How It Works</a>
                 </li>
                 <li class="nav-item">
                     <a href="#features" class="nav-link">Features</a>
@@ -39,31 +98,33 @@
             </ul>
 
             <div class="nav-actions">
-                <button class="theme-toggle" aria-label="Toggle theme">
-                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                         <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
                         <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.66 4.34L14.24 5.76M5.76 14.24L4.34 15.66M15.66 15.66L14.24 14.24M5.76 5.76L4.34 4.34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
-                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                         <path d="M17 10.5C16 14.5 12.5 17 8.5 17C5 17 2 14 2 10.5C2 6.5 4.5 3 8.5 3C8.83 3 9.15 3.03 9.47 3.09C8.55 4.24 8 5.68 8 7.25C8 10.98 11.02 14 14.75 14C15.58 14 16.37 13.85 17.1 13.57C17.03 13.88 17 14.19 17 14.5V10.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <a href="#" class="nav-cta">
+                <a href="#templates" class="nav-cta">
                     Design Invite
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                         <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
             </div>
-            
-            <div class="hamburger">
+
+            <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
-            </div>
+            </button>
         </div>
         <div class="nav-progress"></div>
     </nav>
+
+    <main id="main-content">
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -98,7 +159,7 @@
 
                 <!-- CTA Buttons -->
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">
+                    <a href="#templates" class="btn btn-primary">
                         <!-- Envelope with pen — create invitation -->
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                             <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -161,7 +222,7 @@
                                     <!-- Couple photo avatar -->
                                     <div class="iphone-avatar">
                                         <div class="iphone-avatar-inner">
-                                            <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=300&h=300&fit=crop&crop=center" alt="Couple" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;"/>
+                                            <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=300&h=300&fit=crop&crop=center" alt="Couple" width="300" height="300" decoding="async" fetchpriority="high" class="iphone-avatar-img"/>
                                         </div>
                                     </div>
 
@@ -263,283 +324,6 @@
 
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-section" id="how-it-works">
-        <div class="how-container">
-
-            <div class="how-header">
-                <div class="section-label">Simple Process</div>
-                <h2 class="section-title">From Idea to Invitation in <span>Under 10 Minutes</span></h2>
-                <p class="section-subtitle">Watch your invitation come to life, step by step.</p>
-            </div>
-
-            <!-- Compact Timeline -->
-            <div class="timeline-compact">
-                
-                <!-- Progress Bar -->
-                <div class="timeline-progress-header">
-                    <div class="timeline-total-time">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                        <span>Total Time: <strong>~8 minutes</strong></span>
-                    </div>
-                    <div class="timeline-progress-bar">
-                        <div class="timeline-progress-fill" data-progress="0"></div>
-                        <div class="timeline-progress-markers">
-                            <span class="timeline-marker" data-step="1"></span>
-                            <span class="timeline-marker" data-step="2"></span>
-                            <span class="timeline-marker" data-step="3"></span>
-                            <span class="timeline-marker" data-step="4"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Horizontal Steps -->
-                <div class="timeline-steps-grid">
-
-                <!-- Step 1 -->
-                <div class="timeline-step" data-step="1">
-                    <div class="timeline-step-content">
-                        <div class="timeline-step-header">
-                            <div class="timeline-step-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
-                                    <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
-                                    <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
-                                    <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="timeline-step-meta">
-                                <span class="timeline-step-number">Step 1</span>
-                                <h3 class="timeline-step-title">Choose Your Perfect Design</h3>
-                                <div class="timeline-step-time">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                    <span>2 minutes</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="timeline-step-desc">Browse 50+ stunning templates designed for Indian weddings and engagements. Filter by style, color, or occasion to find your perfect match.</p>
-                        <div class="timeline-step-preview">
-                            <div class="timeline-preview-grid">
-                                <div class="timeline-preview-item tpl-preview-1"></div>
-                                <div class="timeline-preview-item tpl-preview-2"></div>
-                                <div class="timeline-preview-item tpl-preview-3"></div>
-                            </div>
-                            <span class="timeline-preview-label">50+ Premium Templates</span>
-                        </div>
-                        <div class="timeline-step-stat">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>8,547 couples chose their template in under 3 minutes</span>
-                        </div>
-                    </div>
-                    <div class="timeline-step-connector"></div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="timeline-step" data-step="2">
-                    <div class="timeline-step-content">
-                        <div class="timeline-step-header">
-                            <div class="timeline-step-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="timeline-step-meta">
-                                <span class="timeline-step-number">Step 2</span>
-                                <h3 class="timeline-step-title">Personalize Every Detail</h3>
-                                <div class="timeline-step-time">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                    <span>4 minutes</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="timeline-step-desc">Add your names, wedding date, venue details, and upload your favorite photos. Our smart editor makes customization effortless with live preview.</p>
-                        <div class="timeline-step-features">
-                            <div class="timeline-feature-tag">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                                Names & Date
-                            </div>
-                            <div class="timeline-feature-tag">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                                Photo Gallery
-                            </div>
-                            <div class="timeline-feature-tag">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                                Venue & Map
-                            </div>
-                            <div class="timeline-feature-tag">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                                Custom Message
-                            </div>
-                        </div>
-                        <div class="timeline-step-stat">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>"The live preview made it so easy!" - Priya & Arjun</span>
-                        </div>
-                    </div>
-                    <div class="timeline-step-connector"></div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="timeline-step" data-step="3">
-                    <div class="timeline-step-content">
-                        <div class="timeline-step-header">
-                            <div class="timeline-step-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                            </div>
-                            <div class="timeline-step-meta">
-                                <span class="timeline-step-number">Step 3</span>
-                                <h3 class="timeline-step-title">Get Your Beautiful Link</h3>
-                                <div class="timeline-step-time">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    </svg>
-                                    <span>1 minute</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="timeline-step-desc">Instantly receive your personalized invitation link. Clean, memorable, and perfect for sharing with every guest.</p>
-                        <div class="timeline-step-link-demo">
-                            <div class="timeline-link-box">
-                                <span class="timeline-link-icon">🔗</span>
-                                <code class="timeline-link-url">weds.live/arjun-priya</code>
-                                <button class="timeline-link-copy" aria-label="Copy link">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                        <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                </button>
-                            </div>
-                            <span class="timeline-link-note">Easy to remember, beautiful to share</span>
-                        </div>
-                        <div class="timeline-step-stat">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                <polyline points="22 4 12 14.01 9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            <span>Links generated instantly, no waiting</span>
-                        </div>
-                    </div>
-                    <div class="timeline-step-connector"></div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="timeline-step" data-step="4">
-                    <div class="timeline-step-content">
-                        <div class="timeline-step-header">
-                            <div class="timeline-step-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="timeline-step-meta">
-                                <span class="timeline-step-number">Step 4</span>
-                                <h3 class="timeline-step-title">Share & Celebrate</h3>
-                                <div class="timeline-step-time">
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                        <path d="M12 2L12 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                        <path d="M12 2C12 2 8 6 8 12C8 18 12 22 12 22" stroke="currentColor" stroke-width="2"/>
-                                        <path d="M12 2C12 2 16 6 16 12C16 18 12 22 12 22" stroke="currentColor" stroke-width="2"/>
-                                    </svg>
-                                    <span>Forever</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="timeline-step-desc">Share your invitation instantly via WhatsApp, Instagram, email, or SMS. Guests can open it on any device, no app required.</p>
-                        <div class="timeline-step-share">
-                            <div class="timeline-share-btn timeline-share-whatsapp">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-                                </svg>
-                                WhatsApp
-                            </div>
-                            <div class="timeline-share-btn timeline-share-instagram">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
-                                    <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
-                                </svg>
-                                Instagram
-                            </div>
-                            <div class="timeline-share-btn timeline-share-email">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                    <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M3 7L12 13L21 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                </svg>
-                                Email
-                            </div>
-                            <div class="timeline-share-btn timeline-share-more">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                                    <circle cx="12" cy="5" r="2" fill="currentColor"/>
-                                    <circle cx="12" cy="12" r="2" fill="currentColor"/>
-                                    <circle cx="12" cy="19" r="2" fill="currentColor"/>
-                                </svg>
-                                More
-                            </div>
-                        </div>
-                        <div class="timeline-step-stat">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 21C12 21 3 14.5 3 8.5C3 6 5 4 7.5 4C9.2 4 10.7 5 11.5 6.3C11.7 6.6 12.3 6.6 12.5 6.3C13.3 5 14.8 4 16.5 4C19 4 21 6 21 8.5C21 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            <span>10,000+ invitations shared and counting</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-                <!-- Bottom Stats -->
-                <div class="timeline-stats">
-                    <div class="timeline-stat">
-                        <span class="timeline-stat-number">10,000+</span>
-                        <span class="timeline-stat-label">Invitations Created</span>
-                    </div>
-                    <div class="timeline-stat">
-                        <span class="timeline-stat-number">8 min</span>
-                        <span class="timeline-stat-label">Average Time</span>
-                    </div>
-                    <div class="timeline-stat">
-                        <span class="timeline-stat-number">98%</span>
-                        <span class="timeline-stat-label">Happy Couples</span>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
     <!-- Templates Section -->
     <section class="templates-section" id="templates">
         <div class="templates-container">
@@ -563,7 +347,7 @@
                 <div class="template-card" data-category="wedding">
                     <div class="template-preview tpl-1">
                         <div class="template-preview-inner">
-                            <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=120&h=120&fit=crop&q=70" alt="Couple" class="tpl-couple-img"/>
+                            <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=120&h=120&fit=crop&q=70" alt="Couple" width="120" height="120" loading="lazy" decoding="async" class="tpl-couple-img"/>
                             <div class="tpl-couple-name">Arjun &amp; Priya</div>
                             <div class="tpl-deco-line"></div>
                             <div class="tpl-date">12 · 07 · 2025</div>
@@ -581,7 +365,7 @@
                 <div class="template-card" data-category="wedding">
                     <div class="template-preview tpl-2">
                         <div class="template-preview-inner">
-                            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=120&h=120&fit=crop&q=70" alt="Couple" class="tpl-couple-img"/>
+                            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=120&h=120&fit=crop&q=70" alt="Couple" width="120" height="120" loading="lazy" decoding="async" class="tpl-couple-img"/>
                             <div class="tpl-couple-name">Rahul &amp; Sneha</div>
                             <div class="tpl-deco-line"></div>
                             <div class="tpl-date">28 · 09 · 2025</div>
@@ -599,7 +383,7 @@
                 <div class="template-card" data-category="engagement">
                     <div class="template-preview tpl-3">
                         <div class="template-preview-inner">
-                            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=120&h=120&fit=crop&q=70" alt="Couple" class="tpl-couple-img"/>
+                            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=120&h=120&fit=crop&q=70" alt="Couple" width="120" height="120" loading="lazy" decoding="async" class="tpl-couple-img"/>
                             <div class="tpl-couple-name">Vikram &amp; Ananya</div>
                             <div class="tpl-deco-line"></div>
                             <div class="tpl-date">05 · 11 · 2025</div>
@@ -617,7 +401,7 @@
                 <div class="template-card" data-category="wedding">
                     <div class="template-preview tpl-4">
                         <div class="template-preview-inner">
-                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=120&h=120&fit=crop&q=70" alt="Couple" class="tpl-couple-img"/>
+                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=120&h=120&fit=crop&q=70" alt="Couple" width="120" height="120" loading="lazy" decoding="async" class="tpl-couple-img"/>
                             <div class="tpl-couple-name">Karan &amp; Meera</div>
                             <div class="tpl-deco-line"></div>
                             <div class="tpl-date">20 · 12 · 2025</div>
@@ -635,7 +419,7 @@
                 <div class="template-card" data-category="wedding">
                     <div class="template-preview tpl-5">
                         <div class="template-preview-inner">
-                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=120&h=120&fit=crop&q=70" alt="Couple" class="tpl-couple-img"/>
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=120&h=120&fit=crop&q=70" alt="Couple" width="120" height="120" loading="lazy" decoding="async" class="tpl-couple-img"/>
                             <div class="tpl-couple-name">Rohan &amp; Kavya</div>
                             <div class="tpl-deco-line"></div>
                             <div class="tpl-date">14 · 02 · 2026</div>
@@ -653,7 +437,7 @@
                 <div class="template-card" data-category="engagement">
                     <div class="template-preview tpl-6">
                         <div class="template-preview-inner">
-                            <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=120&h=120&fit=crop&q=70" alt="Couple" class="tpl-couple-img"/>
+                            <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=120&h=120&fit=crop&q=70" alt="Couple" width="120" height="120" loading="lazy" decoding="async" class="tpl-couple-img"/>
                             <div class="tpl-couple-name">Aditya &amp; Riya</div>
                             <div class="tpl-deco-line"></div>
                             <div class="tpl-date">08 · 03 · 2026</div>
@@ -673,7 +457,7 @@
             <!-- Bottom CTA -->
             <div class="templates-cta">
                 <p class="templates-cta-note">Showing 6 of 50+ templates &nbsp;·&nbsp; New designs added every month</p>
-                <a href="#" class="btn btn-outline-dark">
+                <a href="#templates" class="btn btn-outline-dark">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
                         <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
@@ -683,6 +467,81 @@
                     View All Templates
                 </a>
             </div>
+
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-section" id="how-it-works">
+        <div class="how-container">
+
+            <div class="how-header">
+                <div class="section-label">Simple Process</div>
+                <h2 class="section-title">From Idea to Invitation in <span>Under 10 Minutes</span></h2>
+                <p class="section-subtitle">Four simple steps. No design skills needed.</p>
+
+                <div class="how-time-pill">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Total time <strong>~8 minutes</strong></span>
+                </div>
+            </div>
+
+            <ol class="steps-grid" aria-label="How weds.live works">
+
+                <!-- Step 1 -->
+                <li class="step-card">
+                    <div class="step-icon" aria-hidden="true">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+                            <rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+                            <rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Pick a Design</h3>
+                    <p class="step-desc">Browse 50+ designs made for Indian weddings.</p>
+                </li>
+
+                <!-- Step 2 -->
+                <li class="step-card">
+                    <div class="step-icon" aria-hidden="true">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Make It Yours</h3>
+                    <p class="step-desc">Add your names, photos and date. Edit live as you go.</p>
+                </li>
+
+                <!-- Step 3 -->
+                <li class="step-card">
+                    <div class="step-icon" aria-hidden="true">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Get Your Link</h3>
+                    <p class="step-desc">A personal link like <code>weds.live/your-names</code>.</p>
+                </li>
+
+                <!-- Step 4 -->
+                <li class="step-card">
+                    <div class="step-icon" aria-hidden="true">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+                            <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="step-title">Share &amp; Celebrate</h3>
+                    <p class="step-desc">Send on WhatsApp. Guests open it on any phone.</p>
+                </li>
+
+            </ol>
 
         </div>
     </section>
@@ -832,7 +691,7 @@
                     <p class="review-text">"We sent our invitation link on WhatsApp and everyone was blown away. Guests kept asking how we made something so beautiful. Took us less than 20 minutes!"</p>
                     <div class="review-author">
                         <div class="review-avatar">
-                            <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=80&h=80&fit=crop&crop=center&q=70" alt="Arjun & Priya"/>
+                            <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=80&h=80&fit=crop&crop=center&q=70" alt="Arjun & Priya" width="80" height="80" loading="lazy" decoding="async"/>
                         </div>
                         <div class="review-author-info">
                             <span class="review-name">Arjun &amp; Priya</span>
@@ -848,7 +707,7 @@
                     <p class="review-text">"The countdown timer was everyone's favourite feature. Our relatives abroad felt so connected to our big day. Absolutely loved the experience from start to finish."</p>
                     <div class="review-author">
                         <div class="review-avatar">
-                            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=80&h=80&fit=crop&q=70" alt="Rahul & Sneha"/>
+                            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=80&h=80&fit=crop&q=70" alt="Rahul & Sneha" width="80" height="80" loading="lazy" decoding="async"/>
                         </div>
                         <div class="review-author-info">
                             <span class="review-name">Rahul &amp; Sneha</span>
@@ -864,7 +723,7 @@
                     <p class="review-text">"We used weds.live for our engagement and the response was incredible. The custom link with our names felt so personal. Highly recommend to every couple!"</p>
                     <div class="review-author">
                         <div class="review-avatar">
-                            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=80&h=80&fit=crop&q=70" alt="Vikram & Ananya"/>
+                            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=80&h=80&fit=crop&q=70" alt="Vikram & Ananya" width="80" height="80" loading="lazy" decoding="async"/>
                         </div>
                         <div class="review-author-info">
                             <span class="review-name">Vikram &amp; Ananya</span>
@@ -880,7 +739,7 @@
                     <p class="review-text">"So easy to set up and the templates are gorgeous. We saved so much compared to printed cards and our guests could open it right on their phones. Perfect!"</p>
                     <div class="review-author">
                         <div class="review-avatar">
-                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=80&h=80&fit=crop&q=70" alt="Rohan & Kavya"/>
+                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=80&h=80&fit=crop&q=70" alt="Rohan & Kavya" width="80" height="80" loading="lazy" decoding="async"/>
                         </div>
                         <div class="review-author-info">
                             <span class="review-name">Rohan &amp; Kavya</span>
@@ -896,7 +755,7 @@
                     <p class="review-text">"The photo gallery feature made our invitation feel like a mini website. All our friends were sharing it on Instagram stories. weds.live is simply the best!"</p>
                     <div class="review-author">
                         <div class="review-avatar">
-                            <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=80&h=80&fit=crop&q=70" alt="Aditya & Riya"/>
+                            <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=80&h=80&fit=crop&q=70" alt="Aditya & Riya" width="80" height="80" loading="lazy" decoding="async"/>
                         </div>
                         <div class="review-author-info">
                             <span class="review-name">Aditya &amp; Riya</span>
@@ -912,7 +771,7 @@
                     <p class="review-text">"Our NRI relatives in the US and UK could RSVP instantly. The venue map was a lifesaver for local guests too. Couldn't have asked for a better invitation experience."</p>
                     <div class="review-author">
                         <div class="review-avatar">
-                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=80&h=80&fit=crop&q=70" alt="Karan & Meera"/>
+                            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=80&h=80&fit=crop&q=70" alt="Karan & Meera" width="80" height="80" loading="lazy" decoding="async"/>
                         </div>
                         <div class="review-author-info">
                             <span class="review-name">Karan &amp; Meera</span>
@@ -992,7 +851,7 @@
                             Share via link
                         </li>
                     </ul>
-                    <a href="#" class="pricing-cta pricing-cta-outline">Start Free</a>
+                    <a href="#templates" class="pricing-cta pricing-cta-outline">Start Free</a>
                 </div>
 
                 <!-- Wedding Plan (Popular) -->
@@ -1038,7 +897,7 @@
                             Easy sharing via link
                         </li>
                     </ul>
-                    <a href="#" class="pricing-cta pricing-cta-primary">Create Invitation</a>
+                    <a href="#templates" class="pricing-cta pricing-cta-primary">Create Invitation</a>
                 </div>
 
                 <!-- Royal Plan -->
@@ -1077,7 +936,7 @@
                             Priority support
                         </li>
                     </ul>
-                    <a href="#" class="pricing-cta pricing-cta-outline">Get Premium</a>
+                    <a href="#templates" class="pricing-cta pricing-cta-outline">Get Premium</a>
                 </div>
 
             </div>
@@ -1095,7 +954,7 @@
                 Free to start. No design skills needed. Live in minutes.
             </p>
             <div class="cta-actions">
-                <a href="#" class="btn btn-primary">
+                <a href="#templates" class="btn btn-primary">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                         <path d="M2 6L12 13L22 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1114,6 +973,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1155,9 +1016,9 @@
                 <h4 class="footer-col-title">Product</h4>
                 <ul class="footer-links">
                     <li><a href="#templates">Templates</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
                     <li><a href="#">Demo</a></li>
                 </ul>
             </div>
@@ -1189,7 +1050,7 @@
 
         <!-- Bottom bar -->
         <div class="footer-bottom">
-            <p class="footer-copy">© 2025 <span>weds.live</span> · Made with <span class="footer-heart">♥</span> for every love story</p>
+            <p class="footer-copy">© <span id="footer-year">2026</span> <span>weds.live</span> · Made with <span class="footer-heart">♥</span> for every love story</p>
             <div class="footer-bottom-links">
                 <a href="#">Privacy</a>
                 <a href="#">Terms</a>
@@ -1198,6 +1059,5 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
