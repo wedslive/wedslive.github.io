@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Digital Invitation — weds.live</title>
+    <meta name="description" content="Fill in your wedding or engagement details and get an instant shareable link and QR code for your guests — free, no signup.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://weds.live/create.html">
+
+    <link rel="icon" type="image/svg+xml" href="lotus-logo.svg">
+    <link rel="apple-touch-icon" href="lotus-logo.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css?v=34">
+    <link rel="stylesheet" href="assets/css/invite.css?v=2">
+
+    <script src="assets/vendor/qrcode.min.js" defer></script>
+    <script src="assets/js/invite-codec.js?v=2" defer></script>
+    <script src="script.js?v=3" defer></script>
+    <script src="assets/js/create.js?v=2" defer></script>
+</head>
+<body>
+    <script>try{if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');}catch(e){}</script>
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <!-- Reuse the main site navbar so the builder feels part of weds.live -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="lotus-logo.svg" alt="weds.live logo" class="nav-logo-img" />
+                    <span>weds.live</span>
+                </a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.66 4.34L14.24 5.76M5.76 14.24L4.34 15.66M15.66 15.66L14.24 14.24M5.76 5.76L4.34 4.34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <path d="M17 10.5C16 14.5 12.5 17 8.5 17C5 17 2 14 2 10.5C2 6.5 4.5 3 8.5 3C8.83 3 9.15 3.03 9.47 3.09C8.55 4.24 8 5.68 8 7.25C8 10.98 11.02 14 14.75 14C15.58 14 16.37 13.85 17.1 13.57C17.03 13.88 17 14.19 17 14.5V10.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <a href="index.html#templates" class="nav-cta">Browse Templates</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="builder-page">
+        <div class="builder-container">
+
+            <a href="index.html" class="builder-back">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to weds.live
+            </a>
+
+            <div class="builder-header">
+                <h1>Create Your Digital Invitation</h1>
+                <p>Fill in your details below. We'll instantly generate a shareable link and a QR code you can print on your invitation cards.</p>
+            </div>
+
+            <form id="invite-form" novalidate>
+
+                <!-- Couple details -->
+                <div class="builder-card">
+                    <h2 class="builder-section-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 21C12 21 3 14.5 3 8.5C3 6 5 4 7.5 4C9.2 4 10.7 5 11.5 6.3C11.7 6.6 12.3 6.6 12.5 6.3C13.3 5 14.8 4 16.5 4C19 4 21 6 21 8.5C21 14.5 12 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                        </svg>
+                        The Couple
+                    </h2>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="groomName">Groom's name *</label>
+                            <input type="text" id="groomName" class="form-control" maxlength="40" required autocomplete="off" placeholder="e.g. Arjun">
+                            <span class="error-text">Please enter the groom's name.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="brideName">Bride's name *</label>
+                            <input type="text" id="brideName" class="form-control" maxlength="40" required autocomplete="off" placeholder="e.g. Priya">
+                            <span class="error-text">Please enter the bride's name.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inviteType">Invitation type</label>
+                        <select id="inviteType" class="form-control">
+                            <option value="wedding">Wedding</option>
+                            <option value="engagement">Engagement</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Date & venue -->
+                <div class="builder-card">
+                    <h2 class="builder-section-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M3 9H21" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M8 2V6M16 2V6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                        Main Event
+                    </h2>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="mainDate">Date *</label>
+                            <input type="date" id="mainDate" class="form-control" required>
+                            <span class="error-text">Please choose the date.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="mainTime">Time</label>
+                            <input type="time" id="mainTime" class="form-control" value="11:00">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="venue">Venue *</label>
+                        <input type="text" id="venue" class="form-control" maxlength="120" required placeholder="e.g. Aarti Celebration, Nandura, Dist. Buldhana">
+                        <span class="error-text">Please enter the venue.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mapUrl">Google Maps link (optional)</label>
+                        <input type="url" id="mapUrl" class="form-control" inputmode="url" maxlength="300" placeholder="https://maps.app.goo.gl/...">
+                        <span class="hint">Guests get a "View on Google Maps" button. Use the short link from Maps → Share (maps.app.goo.gl/…) to keep the QR code small.</span>
+                        <span class="error-text">Please paste a full web link, e.g. https://maps.app.goo.gl/…</span>
+                    </div>
+                </div>
+
+                <!-- Extra events -->
+                <div class="builder-card">
+                    <h2 class="builder-section-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M12 8C12 8 9 10.5 9 12.5C9 13.9 10.3 15 12 15C13.7 15 15 13.9 15 12.5C15 10.5 12 8 12 8Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M21 15C21 16.1 20.1 17 19 17H7L3 21V5C3 3.9 3.9 3 5 3H19C20.1 3 21 3.9 21 5V15Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                        </svg>
+                        Other Ceremonies <span style="font-weight:400;font-size:0.8rem;color:var(--text-light);">(optional)</span>
+                    </h2>
+
+                    <div id="events-list"></div>
+
+                    <button type="button" class="add-event-btn" id="add-event-btn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <path d="M8 3V13M3 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Add another ceremony
+                    </button>
+                </div>
+
+                <!-- Message & theme -->
+                <div class="builder-card">
+                    <h2 class="builder-section-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M2 6L12 13L22 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Message to Guests
+                    </h2>
+
+                    <div class="form-group">
+                        <label for="message">Personal message</label>
+                        <textarea id="message" class="form-control" maxlength="400" placeholder="With the blessings of our families, we invite you to celebrate our wedding...">With the blessings of our families, we joyfully invite you to celebrate our wedding. Your presence means the world to us.</textarea>
+                    </div>
+
+                    <fieldset class="theme-fieldset">
+                        <legend>Color theme</legend>
+                        <div class="theme-swatches" id="theme-swatches">
+                            <label class="theme-swatch active" title="Midnight Rose" style="background: linear-gradient(135deg, #d4547a, #7a1f3d);">
+                                <input type="radio" name="theme" value="rose" aria-label="Midnight Rose" checked>
+                            </label>
+                            <label class="theme-swatch" title="Royal Blue" style="background: linear-gradient(135deg, #3a6ea5, #12253d);">
+                                <input type="radio" name="theme" value="royal" aria-label="Royal Blue">
+                            </label>
+                            <label class="theme-swatch" title="Garden Green" style="background: linear-gradient(135deg, #4a8a4a, #14301a);">
+                                <input type="radio" name="theme" value="garden" aria-label="Garden Green">
+                            </label>
+                            <label class="theme-swatch" title="Lavender Dream" style="background: linear-gradient(135deg, #a68ad4, #2d1a4a);">
+                                <input type="radio" name="theme" value="lavender" aria-label="Lavender Dream">
+                            </label>
+                            <label class="theme-swatch" title="Golden Hour" style="background: linear-gradient(135deg, #d4a552, #4a2f10);">
+                                <input type="radio" name="theme" value="golden" aria-label="Golden Hour">
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="builder-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Generate My Invitation
+                    </button>
+                </div>
+            </form>
+
+            <!-- Result panel: hidden until the form is submitted -->
+            <div class="builder-card result-card" id="result-panel" style="display:none;" tabindex="-1">
+                <div class="result-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2.5"/>
+                    </svg>
+                </div>
+                <h2 class="builder-section-title" style="justify-content:center;">Your invitation is ready! 🎉</h2>
+                <p style="color:var(--text-light); font-size:0.92rem;">Share this link with your guests, or print the QR code on your invitation cards.</p>
+
+                <div class="result-url-box">
+                    <label for="result-url" class="visually-hidden">Your invitation link</label>
+                    <input type="text" id="result-url" readonly>
+                    <button type="button" class="result-copy-btn" id="copy-link-btn">Copy Link</button>
+                </div>
+
+                <div id="qr-canvas-wrap"></div>
+                <p class="qr-caption" id="qr-caption">Guests scan this code to open your digital invitation instantly.</p>
+                <p class="qr-note qr-note-warn" id="qr-local-warning" role="status" hidden></p>
+                <p class="qr-note qr-note-error" id="qr-error" role="alert" hidden></p>
+
+                <div class="result-actions">
+                    <a href="#" target="_blank" rel="noopener" class="btn btn-primary" id="preview-invite-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                        Preview Invitation
+                    </a>
+                    <button type="button" class="btn btn-outline-dark" id="download-qr-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Download QR for Print
+                    </button>
+                    <button type="button" class="btn btn-outline-dark" id="whatsapp-share-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.2-.6.9-.8 1.1-.1.2-.3.2-.5.1-1.4-.7-2.3-1.2-3.3-2.8-.2-.3 0-.5.2-.7.2-.2.5-.5.6-.7.1-.2 0-.4 0-.6-.1-.2-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.2 1.8 2.8 4.4 3.9 2.1.9 2.5.7 3-.2.2-.4.6-1.3.6-1.5s-.1-.3-.2-.4Z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z" stroke="currentColor" stroke-width="0.5"/></svg>
+                        Share on WhatsApp
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

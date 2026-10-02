@@ -1,0 +1,579 @@
+/* ==========================================================================
+   Shared styles for the invitation builder (create.html) and viewer (invite.html)
+   Reuses the weds.live palette defined in /styles.css (--primary-color etc.)
+   ========================================================================== */
+
+.builder-page {
+    min-height: 100vh;
+    background: var(--background);
+    padding: calc(var(--nav-height) + 2rem) 1rem 4rem;
+}
+
+.builder-container {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.builder-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.builder-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.builder-header p {
+    color: var(--text-light);
+    font-size: 0.98rem;
+}
+
+.builder-card {
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 1.5rem;
+}
+
+.builder-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.builder-section-title svg {
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+}
+
+@media (max-width: 560px) {
+    .form-row { grid-template-columns: 1fr; }
+}
+
+.form-group {
+    margin-bottom: 1.1rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+}
+
+.form-group .hint {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-top: 0.35rem;
+    font-weight: 400;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border: 1.5px solid var(--border-light);
+    border-radius: 10px;
+    background: var(--background);
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(232, 84, 122, 0.12);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.theme-swatches {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.theme-swatch {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    position: relative;
+    transition: var(--transition);
+}
+
+.theme-swatch.active {
+    border-color: var(--text-dark);
+    transform: scale(1.08);
+}
+
+.theme-swatch input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    margin: 0;
+}
+
+.event-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 0.6rem;
+    align-items: end;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px dashed var(--border-light);
+}
+
+@media (max-width: 560px) {
+    .event-row { grid-template-columns: 1fr; }
+}
+
+.event-row .remove-event {
+    background: none;
+    border: 1.5px solid var(--border-light);
+    border-radius: 10px;
+    color: var(--text-light);
+    padding: 0.65rem 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    height: fit-content;
+}
+
+.event-row .remove-event:hover {
+    border-color: #d94848;
+    color: #d94848;
+}
+
+.add-event-btn {
+    background: none;
+    border: 1.5px dashed var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: var(--transition);
+}
+
+.add-event-btn:hover {
+    background: rgba(232, 84, 122, 0.06);
+}
+
+.builder-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.builder-actions .btn {
+    width: 100%;
+    max-width: 360px;
+}
+
+/* Result panel shown after generating the invite */
+.result-card {
+    text-align: center;
+}
+
+.result-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(76, 175, 100, 0.12);
+    color: #3a9a52;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.result-url-box {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    background: var(--background-alt);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 0.7rem 0.9rem;
+    margin: 1.25rem 0;
+}
+
+.result-url-box input {
+    flex: 1;
+    border: none;
+    background: none;
+    color: var(--text-dark);
+    font-size: 0.88rem;
+    font-family: monospace;
+    outline: none;
+    min-width: 0;
+}
+
+.result-copy-btn {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.result-copy-btn:hover {
+    background: var(--secondary-color);
+}
+
+.result-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#qr-canvas-wrap {
+    display: inline-block;
+    padding: 6px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: var(--shadow-light);
+    margin: 0.5rem auto 0.25rem;
+}
+
+/* Canvas is drawn at high resolution; keep module edges crisp when scaled down */
+.qr-canvas {
+    display: block;
+    width: 200px;
+    height: 200px;
+    image-rendering: pixelated;
+}
+
+.qr-caption {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.75rem;
+}
+
+.qr-note {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    max-width: 480px;
+    margin: 0.75rem auto 0;
+    padding: 0.65rem 0.9rem;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.qr-note-warn {
+    background: #fff6e0;
+    color: #7a5200;
+    border: 1px solid #f0d58c;
+}
+
+.qr-note-error {
+    background: #fdecec;
+    color: #9b2121;
+    border: 1px solid #f3bcbc;
+}
+
+/* Author display rules would otherwise override the [hidden] attribute */
+.result-card [hidden] {
+    display: none !important;
+}
+
+.result-card {
+    scroll-margin-top: calc(var(--nav-height) + 16px);
+}
+
+.result-actions {
+    margin-top: 1.5rem;
+}
+
+.result-actions .btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.theme-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.1rem;
+}
+
+.theme-fieldset legend {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+    padding: 0;
+}
+
+/* The radio is invisible, so show keyboard focus on its swatch instead */
+.theme-swatch:focus-within {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.builder-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.builder-back:hover {
+    color: var(--primary-color);
+}
+
+.field-error {
+    border-color: #d94848 !important;
+}
+
+.error-text {
+    color: #d94848;
+    font-size: 0.8rem;
+    margin-top: 0.35rem;
+    display: none;
+}
+
+.error-text.show {
+    display: block;
+}
+
+/* ==========================================================================
+   Invitation viewer (invite.html)
+   ========================================================================== */
+
+.invite-body {
+    margin: 0;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    color: #f9e8ee;
+    background: #1a0a0f;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.invite-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.25rem;
+    position: relative;
+}
+
+.invite-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+}
+
+.invite-guest-line {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.invite-guest-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.6rem;
+    color: #ffd9e5;
+    margin-bottom: 1.5rem;
+}
+
+.invite-script {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.6rem;
+    opacity: 0.85;
+    margin-bottom: 0.5rem;
+}
+
+.invite-names {
+    font-size: clamp(2.2rem, 8vw, 3.4rem);
+    font-weight: 600;
+    margin: 0 0 1rem;
+    line-height: 1.15;
+}
+
+.invite-date {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.invite-countdown {
+    display: flex;
+    gap: 0.9rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.invite-countdown-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 0.75rem 0.5rem;
+    min-width: 62px;
+}
+
+.invite-countdown-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.invite-countdown-unit {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+    display: block;
+    margin-top: 0.2rem;
+}
+
+.invite-scroll-hint {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    opacity: 0.55;
+    margin-top: 1rem;
+}
+
+.invite-section {
+    padding: 4rem 1.25rem;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.invite-section-title {
+    font-size: clamp(1.6rem, 5vw, 2.1rem);
+    margin-bottom: 1.25rem;
+}
+
+.invite-message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+.invite-events {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.invite-event-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.invite-event-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.invite-event-detail {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    opacity: 0.75;
+    line-height: 1.6;
+}
+
+.invite-map-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+    padding: 0.7rem 1.5rem;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 50px;
+    color: #f9e8ee;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.invite-map-btn:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+.invite-footer {
+    text-align: center;
+    padding: 2.5rem 1.25rem 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+.invite-footer a {
+    color: #f5b8c8;
+}
+
+.invite-notfound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+}
