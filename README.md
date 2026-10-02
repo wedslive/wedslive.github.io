@@ -13,8 +13,42 @@ wedslive.github.io/
 ├── script.js           ← navbar, theme toggle, countdown, template filter
 ├── lotus-logo.svg      ← logo / favicon
 ├── CNAME               ← custom domain config for GitHub Pages
-└── README.md           ← this file
+├── create.html          ← invitation builder form
+├── invite.html           ← invitation viewer (renders a shared link)
+├── assets/
+│   ├── css/invite.css    ← styles for create.html + invite.html
+│   ├── js/invite-codec.js← encode/decode invitation data into a URL
+│   ├── js/create.js      ← builder form logic, QR generation, share actions
+│   ├── js/invite-view.js ← renders the invitation from the URL hash
+│   └── vendor/qrcode.min.js ← vendored QR code library (davidshimjs/qrcodejs, MIT)
+└── README.md            ← this file
 ```
+
+## Invitation builder (create.html → invite.html)
+
+Since this site has no backend or database (it's static GitHub Pages), the builder
+does **not** create short custom URLs stored on a server. Instead it takes a
+different, fully client-side approach:
+
+1. The couple fills in their details on `create.html` (names, date, venue,
+   ceremony schedule, message, color theme).
+2. All of that data is packed into a compact base64 string and appended to
+   `invite.html` as a URL fragment: `invite.html#i=<encoded-data>`. The link
+   **is** the invitation — nothing is stored anywhere.
+3. A QR code for that exact link is rendered client-side (`qrcode.min.js`)
+   and can be downloaded as a PNG to print on physical invitation cards.
+4. Opening the link renders the invitation instantly by decoding the hash —
+   works even if the site is offline/cached, since no API call is made.
+5. Guests can optionally be personalised by adding `?to=Guest%20Name` before
+   the `#i=...` part of the link (e.g. shown as "Dear Guest Name").
+
+**Tradeoff to be aware of**: because the data lives in the URL, links are
+longer than a typical short link (roughly 150–400 characters depending on
+how much is filled in) and there's no way to edit an invitation after
+sharing it — regenerating the form produces a new link. If real short
+links (`weds.live/abc123`), an editable dashboard, or RSVP collection are
+needed later, that requires adding a backend/database (e.g. a small API +
+storage), which is a bigger change than this static-site approach.
 
 ## Working on it locally
 
