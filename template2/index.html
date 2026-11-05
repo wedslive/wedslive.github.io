@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aria & Rohan — Wedding Invitation</title>
+    <meta name="description" content="You're invited to the wedding of Aria & Rohan. July 12, 2025 · The Oberoi, Mumbai">
+    <meta name="theme-color" content="#fdfbf7">
+    <meta name="color-scheme" content="light">
+    <link rel="canonical" href="https://weds.live/aria-rohan">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aria & Rohan — Wedding Invitation">
+    <meta property="og:description" content="You're invited to celebrate our wedding. July 12, 2025 · The Oberoi, Mumbai">
+    <meta property="og:image" content="assets/images/hero-bg.jpg">
+    <meta property="og:url" content="https://weds.live/aria-rohan">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/template2.css?v=3">
+    <noscript>
+        <style>
+            .loading-page, .music-toggle, .hero-countdown { display: none !important; }
+            .loading-icon, .loading-progress, .loading-count { display: none !important; }
+        </style>
+    </noscript>
+</head>
+<body>
+
+    <!-- Loading Page -->
+    <div class="loading-page" id="loading" aria-busy="true" aria-label="Loading invitation">
+        <div class="loading-inner">
+            <div class="loading-icon" aria-hidden="true">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="3" stroke-dasharray="176" stroke-dashoffset="0">
+                        <animateTransform attributeName="transform" type="rotate" from="0 32 32" to="360 32 32" dur="1.5s" repeatCount="indefinite"/>
+                        <animate attributeName="stroke-dashoffset" from="0" to="176" dur="1.5s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+            </div>
+            <p class="loading-text">Loading Love ❤️</p>
+            <div class="loading-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="loading-bar" id="loading-bar"></div>
+            </div>
+            <p class="loading-count" id="loading-count">0%</p>
+            <noscript>
+                <p class="loading-noscript">Please enable JavaScript to view this invitation</p>
+            </noscript>
+        </div>
+    </div>
+
+    <!-- Welcome Page -->
+    <div class="welcome-page" id="welcome" hidden>
+        <div class="welcome-bg" aria-hidden="true">
+            <img src="assets/images/welcome-bg.jpg" alt="" loading="eager" fetchpriority="high" width="1920" height="1080">
+            <div class="welcome-overlay"></div>
+        </div>
+        <div class="welcome-content">
+            <p class="welcome-greeting">Together with their families</p>
+            <p class="welcome-names">Aria &amp; Rohan</p>
+            <div class="welcome-photo" aria-hidden="true">
+                <img src="assets/images/story-photo.jpg" alt="Aria and Rohan" loading="eager" width="400" height="500">
+            </div>
+            <div id="guest-name-display"></div>
+            <button type="button" class="btn btn--welcome" id="open-invitation">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M2 6L12 13L22 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Open Invitation
+            </button>
+        </div>
+    </div>
+
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-inner">
+            <a href="#hero" class="logo-mark" aria-label="Back to top">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                    <path d="M14 4C19.5228 4 24 8.47715 24 14C24 19.5228 19.5228 24 14 24C8.47715 24 4 19.5228 4 14C4 8.47715 8.47715 4 14 4Z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M10 14L13 17L18 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+            <nav class="nav-primary" aria-label="Primary navigation">
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </button>
+                <ul id="nav-menu" class="nav-list" role="list">
+                    <li><a href="#our-story" class="nav-link">Our Story</a></li>
+                    <li><a href="#events" class="nav-link">Events</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#rsvp" class="nav-link nav-link--cta">RSVP</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-backdrop" hidden></div>
+    </header>
+
+    <!-- Music Player -->
+    <button type="button" class="music-toggle" id="music-toggle" aria-label="Play music" aria-pressed="false" data-music-src="assets/music/sound.wav" hidden>
+        <svg class="music-icon-play" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="5 3 19 12 5 21"/>
+        </svg>
+        <svg class="music-icon-pause" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" hidden>
+            <rect x="6" y="4" width="4" height="16" rx="1"/>
+            <rect x="14" y="4" width="4" height="16" rx="1"/>
+        </svg>
+    </button>
+
+    <main id="main" role="main" tabindex="-1">
+
+        <section id="hero" class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg" aria-hidden="true">
+                <img src="assets/images/hero-bg.jpg" alt="" loading="eager" fetchpriority="high" width="1920" height="1080">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <p class="hero-greeting">Together with their families</p>
+                <h1 id="hero-title" class="hero-names">Aria & Rohan</h1>
+                <p class="hero-date">
+                    <time datetime="2025-07-12">July 12, 2025</time>
+                    <span class="hero-divider" aria-hidden="true"></span>
+                    <span>The Oberoi, Mumbai</span>
+                </p>
+                <div class="hero-countdown" data-wedding-date="2025-07-12T16:00:00" aria-label="Countdown to the wedding">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-days">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-hours">00</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-minutes">00</span>
+                        <span class="countdown-label">Mins</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="countdown-seconds">00</span>
+                        <span class="countdown-label">Secs</span>
+                    </div>
+                    <p class="countdown-message" hidden>It's happening now — see you there!</p>
+                </div>
+                <a href="#rsvp" class="btn btn--primary">RSVP Now</a>
+                <div class="hero-scroll" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5V19M19 12L12 19L5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <section id="our-story" class="section section--story" aria-labelledby="story-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="story-title" class="section-title">Our Story</h2>
+                    <div class="section-divider" aria-hidden="true"></div>
+                </header>
+                <div class="story-grid">
+                    <figure class="story-image" aria-hidden="true">
+                        <img src="assets/images/story-photo.jpg" alt="Aria and Rohan laughing together" loading="lazy" width="800" height="1000">
+                    </figure>
+                    <div class="story-content">
+                        <p class="story-text">Six years ago, a chance meeting at a mutual friend's birthday turned into coffee, then countless conversations, and eventually a love neither of us expected.</p>
+                        <p class="story-text">From late-night calls across time zones to building a home together in Mumbai, every moment has led us here. We've grown individually and together — through career changes, family milestones, and the quiet everyday moments that matter most.</p>
+                        <p class="story-text">Now, surrounded by the people who shaped us, we want to celebrate the next chapter. Your presence means more than any gift.</p>
+                        <blockquote class="story-quote">
+                            "We didn't find each other by accident. We found each other because we were both looking for something real."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="section section--events" aria-labelledby="events-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="events-title" class="section-title">Wedding Events</h2>
+                    <div class="section-divider" aria-hidden="true"></div>
+                    <p class="section-subtitle">Three days of celebration. We'd love for you to join us for all of it.</p>
+                </header>
+                <div class="events-timeline">
+                    <article class="event-card" data-aos="fade-up">
+                        <div class="event-card-header">
+                            <span class="event-day">Day 1</span>
+                            <time class="event-date" datetime="2025-07-10">July 10, 2025</time>
+                        </div>
+                        <h3 class="event-name">Mehndi & Sangeet</h3>
+                        <p class="event-time">5:00 PM onwards</p>
+                        <p class="event-venue">The Oberoi, Mumbai — Poolside Lawn</p>
+                        <p class="event-desc">An evening of music, henna, and celebration. Come ready to dance.</p>
+                        <a href="https://maps.app.goo.gl/oberoi-mumbai" target="_blank" rel="noopener" class="event-map">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+                            View on Maps
+                        </a>
+                    </article>
+                    <article class="event-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="event-card-header">
+                            <span class="event-day">Day 2</span>
+                            <time class="event-date" datetime="2025-07-11">July 11, 2025</time>
+                        </div>
+                        <h3 class="event-name">Haldi Ceremony</h3>
+                        <p class="event-time">11:00 AM</p>
+                        <p class="event-venue">The Oberoi, Mumbai — Garden Terrace</p>
+                        <p class="event-desc">An intimate morning ceremony with family. Yellow attire encouraged.</p>
+                        <a href="https://maps.app.goo.gl/oberoi-mumbai" target="_blank" rel="noopener" class="event-map">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+                            View on Maps
+                        </a>
+                    </article>
+                    <article class="event-card event-card--featured" data-aos="fade-up" data-aos-delay="200">
+                        <div class="event-card-header">
+                            <span class="event-day">Day 3</span>
+                            <time class="event-date" datetime="2025-07-12">July 12, 2025</time>
+                        </div>
+                        <h3 class="event-name">Wedding Ceremony & Reception</h3>
+                        <p class="event-time">4:00 PM · Ceremony · 7:30 PM Reception</p>
+                        <p class="event-venue">The Oberoi, Mumbai — Grand Ballroom</p>
+                        <p class="event-desc">The main celebration. Traditional ceremony followed by dinner and dancing.</p>
+                        <a href="https://maps.app.goo.gl/oberoi-mumbai" target="_blank" rel="noopener" class="event-map">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+                            View on Maps
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section section--gallery" aria-labelledby="gallery-title">
+            <div class="container">
+                <header class="section-header">
+                    <h2 id="gallery-title" class="section-title">Moments</h2>
+                    <div class="section-divider" aria-hidden="true"></div>
+                </header>
+                <div class="gallery-grid" id="gallery-grid" role="list">
+                </div>
+            </div>
+        </section>
+
+        <section id="rsvp" class="section section--rsvp" aria-labelledby="rsvp-title">
+            <div class="container">
+                <div class="rsvp-card">
+                    <header class="section-header section-header--center">
+                        <h2 id="rsvp-title" class="section-title">Will You Be There?</h2>
+                        <div class="section-divider" aria-hidden="true"></div>
+                        <p class="section-subtitle">Let us know by June 15. We can't wait to celebrate with you.</p>
+                    </header>
+                    <form id="rsvp-form" class="rsvp-form" data-endpoint="https://api.weds.live/rsvp" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guest-name">Full Name *</label>
+                                <input type="text" id="guest-name" name="guestName" required autocomplete="name" placeholder="Your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="guest-email">Email *</label>
+                                <input type="email" id="guest-email" name="guestEmail" required autocomplete="email" placeholder="you@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="guest-phone">Phone (for WhatsApp updates)</label>
+                            <input type="tel" id="guest-phone" name="guestPhone" autocomplete="tel" placeholder="+91 9xxxxxxxxx">
+                        </div>
+                        <fieldset class="form-group">
+                            <legend>Attending *</legend>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="attending" value="yes" required>
+                                    <span class="radio-custom"></span>
+                                    <span>Yes, I'll be there</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="attending" value="no">
+                                    <span class="radio-custom"></span>
+                                    <span>Can't make it</span>
+                                </label>
+                            </div>
+                        </fieldset>
+                        <div class="form-group" id="guests-count-wrapper" hidden>
+                            <label for="guests-count">Number of Guests</label>
+                            <select id="guests-count" name="guestsCount">
+                                <option value="1">1 (Just me)</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="guest-message">Message for the Couple</label>
+                            <textarea id="guest-message" name="guestMessage" rows="4" placeholder="Your wishes, advice, or a memory you cherish..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full">Submit RSVP</button>
+                        <p class="form-note">We'll send a confirmation to your email. For changes, reply to that email.</p>
+                    </form>
+                    <div id="rsvp-success" class="rsvp-success" hidden>
+                        <svg class="success-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <h3>Thank You!</h3>
+                        <p>Your RSVP has been received. We'll send a confirmation email shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-names">Aria & Rohan</p>
+                <p class="footer-date"><time datetime="2025-07-12">July 12, 2025</time> · Mumbai</p>
+                <div class="footer-links">
+                    <a href="https://wa.me/919876543210?text=Congratulations%20Aria%20and%20Rohan!" target="_blank" rel="noopener" class="footer-link" aria-label="WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.2-.6.9-.8 1.1-.1.2-.3.2-.5.1-1.4-.7-2.3-1.2-3.3-2.8-.2-.3 0-.5.2-.7.2-.2.5-.5.6-.7.1-.2 0-.4 0-.6-.1-.2-.6-1.5-.8-2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.2 1.8 2.8 4.4 3.9 2.1.9 2.5.7 3-.2.2-.4.6-1.3.6-1.5s-.1-.3-.2-.4Z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z" stroke="currentColor" stroke-width="0.5"/></svg>
+                    </a>
+                    <a href="mailto:ariaandrohan.wedding@gmail.com" class="footer-link" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M2 6L12 13L22 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+                <p class="footer-credit">Created with <span aria-hidden="true">♥</span> on <a href="https://weds.live" target="_blank" rel="noopener">weds.live</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden>
+        <button class="lightbox-close" aria-label="Close preview">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous image">&lsaquo;</button>
+        <button class="lightbox-next" aria-label="Next image">&rsaquo;</button>
+        <img src="" alt="" class="lightbox-image">
+        <p class="lightbox-caption"></p>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.js"></script>
+    <script src="js/template2.js?v=3" defer></script>
+</body>
+</html>

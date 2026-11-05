@@ -1,0 +1,268 @@
+html {
+    scroll-behavior: smooth !important;
+    scrollbar-width: none !important;
+    overflow-x: hidden !important;
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    /* font-size: 1.2rem !important; */
+    background-color: #730237 !important; /* Newly added color for experiment */
+}
+
+.font-esthetic {
+    font-family: 'Great Vibes', cursive !important;
+    color: #ffffff !important;
+}
+
+.font-arabic {
+    font-family: 'Poppins', sans-serif !important;
+    color: #ffffff !important;
+    /* font-size: 1.2rem !important; */
+}
+
+.img-crop {
+    width: 14rem;
+    height: 14rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.img-crop>img {
+    display: inline;
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+}
+
+.btn-music {
+    position: fixed;
+    bottom: 9vh !important;
+    right: 2vh !important;
+    z-index: 1055 !important;
+}
+
+.loading-page {
+    position: fixed;
+    inset: 0 !important;
+    width: 100%;
+    height: 100%;
+    background-color: #730237;
+    z-index: 1056 !important;
+}
+
+.card-body {
+    overflow-wrap: break-word !important;
+}
+
+.mouse-animation {
+    padding: 0.25rem 0.625rem;
+    height: 2rem;
+    border: 0.1rem solid #ffffff;
+    border-radius: 1.4rem;
+    opacity: 0.75;
+    box-sizing: content-box;
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+}
+
+.mouse-animation>.scroll-animation {
+    width: 0.25rem;
+    height: 0.625rem;
+    border-radius: 25%;
+    background-color: #ffffff;
+    animation-name: scroll;
+    animation-duration: 2.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spin-icon {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin-button {
+    animation: spin-icon 5s linear infinite;
+}
+
+@keyframes love {
+    50% {
+        transform: translateY(1rem);
+    }
+}
+
+.animate-love {
+    animation: love 5s ease-in-out infinite;
+}
+
+.dark-section {
+    background-color: #400414 !important;
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
+}
+
+footer {
+    background-color: #400414 !important;
+    margin-top: -0.5rem;
+    padding-bottom: 5rem;
+}
+
+.bg-dark{
+    background-color: #931f55 !important;
+}
+
+.border {
+    border: var(--bs-border-width) var(--bs-border-style) #e2e2e2 !important;
+}
+
+/* ══════════════════════════════════════════════════════
+   GALLERY  —  horizontal snap strip + masonry grid
+   ══════════════════════════════════════════════════════ */
+
+/* ── Horizontal snap strip ─────────────────────────── */
+.gallery-strip {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.25rem 0.75rem 1rem;
+    scrollbar-width: none;
+}
+.gallery-strip::-webkit-scrollbar { display: none; }
+
+.gallery-strip-card {
+    flex: 0 0 62vw;
+    max-width: 260px;
+    scroll-snap-align: center;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.15);
+}
+.gallery-strip-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 32px rgba(0,0,0,0.65);
+}
+.gallery-strip-card img {
+    width: 100%;
+    height: 72vw;
+    max-height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ── Masonry 2-col grid ─────────────────────────────── */
+/* (removed) */
+/* ══════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════════
+   EVENT CARDS
+   ══════════════════════════════════════════════════════ */
+.event-card {
+    position: relative;
+    border-radius: 1rem;
+    padding: 1rem 1.25rem 1rem 1.5rem;
+    margin: 0;
+    border-left: 4px solid transparent;
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+}
+
+.event-emoji {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+    display: block;
+    animation: event-float 3s ease-in-out infinite;
+}
+
+.event-title {
+    font-size: 2rem !important;
+    margin: 0 0 0.25rem !important;
+}
+
+.event-detail {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@keyframes event-float {
+    0%, 100% { transform: translateY(0);      }
+    50%       { transform: translateY(-5px);  }
+}
+
+/* Mehndi — green */
+.event-mehndi {
+    background: linear-gradient(135deg, rgba(34, 85, 34, 0.35), rgba(34, 85, 34, 0.10));
+    border-left-color: #4caf50;
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.25);
+}
+.event-mehndi .event-title { color: #81c784 !important; }
+
+/* Sreemanti — saffron/orange */
+.event-sreemanti {
+    background: linear-gradient(135deg, rgba(180, 90, 0, 0.35), rgba(180, 90, 0, 0.10));
+    border-left-color: #ff9800;
+    box-shadow: 0 4px 20px rgba(255, 152, 0, 0.25);
+}
+.event-sreemanti .event-title { color: #ffb74d !important; }
+
+/* Sangit — purple/music */
+.event-sangit {
+    background: linear-gradient(135deg, rgba(100, 30, 140, 0.35), rgba(100, 30, 140, 0.10));
+    border-left-color: #ce93d8;
+    box-shadow: 0 4px 20px rgba(206, 147, 216, 0.25);
+}
+.event-sangit .event-title { color: #ce93d8 !important; }
+
+/* Haldi — yellow */
+.event-haldi {
+    background: linear-gradient(135deg, rgba(180, 150, 0, 0.40), rgba(180, 150, 0, 0.10));
+    border-left-color: #fdd835;
+    box-shadow: 0 4px 20px rgba(253, 216, 53, 0.30);
+}
+.event-haldi .event-title { color: #fff176 !important; }
+
+/* Wedding — gold/red */
+.event-wedding {
+    background: linear-gradient(135deg, rgba(140, 20, 60, 0.45), rgba(180, 130, 0, 0.20));
+    border-left-color: #f48fb1;
+    box-shadow: 0 4px 20px rgba(244, 143, 177, 0.30);
+}
+.event-wedding .event-title { color: #f48fb1 !important; }
+/* ══════════════════════════════════════════════════════ */
+
+.events-wrapper {
+    padding: 0 0.25rem;
+}
