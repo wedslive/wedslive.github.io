@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https: data: blob:; media-src 'self' https: blob:; connect-src 'self' https:; frame-src https://www.google.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- wl:meta:start (tools/build-invite.mjs rewrites this block for each couple) -->
+    <title>Rajwada · Royal Indian Wedding Invitation · weds.live</title>
+    <meta name="description" content="A royal Indian digital wedding invitation: palace arches, gold leaf, a wax-sealed envelope, live countdown, RSVP and directions. In English, Marathi and Hindi.">
+    <link rel="canonical" href="https://weds.live/invitations/templates/rajwada/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="weds.live">
+    <meta property="og:title" content="Aniruddha & Gayatri · Wedding Invitation">
+    <meta property="og:description" content="Saturday, 6 February 2027 · Kesari Mahal, Kolhapur. Open the invitation.">
+    <meta property="og:url" content="https://weds.live/invitations/templates/rajwada/">
+    <meta property="og:image" content="https://weds.live/invitations/templates/rajwada/og.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="A gold palace arch on maroon with the names Aniruddha and Gayatri">
+    <meta property="og:locale" content="en_IN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aniruddha & Gayatri · Wedding Invitation">
+    <meta name="twitter:description" content="Saturday, 6 February 2027 · Kesari Mahal, Kolhapur.">
+    <meta name="twitter:image" content="https://weds.live/invitations/templates/rajwada/og.jpg">
+    <!-- wl:meta:end -->
+
+    <meta name="theme-color" content="#33070f">
+    <meta name="color-scheme" content="dark light">
+    <link rel="icon" type="image/svg+xml" href="../../templates/rajwada/assets/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Pinyon+Script&family=Tiro+Devanagari+Hindi&family=Tiro+Devanagari+Marathi&display=swap">
+    <link rel="stylesheet" href="../../core/css/wl-base.css?v=1">
+    <link rel="stylesheet" href="../../templates/rajwada/rajwada.css?v=1">
+
+    <script src="../../core/js/foundation/core.js?v=1" defer></script>
+    <script src="../../core/js/foundation/i18n.js?v=1" defer></script>
+    <script src="../../core/js/foundation/time.js?v=1" defer></script>
+    <script src="../../core/js/domain/catalog.js?v=1" defer></script>
+    <script src="../../core/js/domain/config.js?v=1" defer></script>
+    <script src="../../core/js/components/fragments.js?v=1" defer></script>
+    <script src="../../core/js/components/widgets.js?v=1" defer></script>
+    <script src="../../core/js/components/gallery.js?v=1" defer></script>
+    <script src="../../core/js/components/music.js?v=1" defer></script>
+    <script src="../../core/js/rsvp/rsvp.js?v=1" defer></script>
+    <script src="../../core/js/motion/motion.js?v=1" defer></script>
+    <script src="../../core/js/motion/envelope.js?v=1" defer></script>
+    <script src="../../templates/rajwada/rajwada-art.js?v=1" defer></script>
+    <script src="../../templates/rajwada/rajwada.js?v=1" defer></script>
+    <script src="../../core/js/engine.js?v=1" defer></script>
+</head>
+<body class="rj" data-wl-template="rajwada" data-wl-content="../../content/">
+    <div id="wl-loader" class="wl-loader rj-loader" role="status">
+        <svg viewBox="0 0 72 72" aria-hidden="true" focusable="false">
+            <circle cx="36" cy="36" r="30" opacity=".3"/>
+            <circle cx="36" cy="36" r="30" class="rj-loader__run"/>
+            <circle cx="36" cy="36" r="3.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <span class="wl-sr-only">Preparing your invitation</span>
+    </div>
+
+    <div id="wl-app"></div>
+
+    <noscript><div class="rj-noscript">Please enable JavaScript to open this invitation.</div></noscript>
+
+    <!-- wl:config (the wedding: every word, date, photo and setting lives here) -->
+    <script type="application/json" id="wl-config">
+{
+    "v": 2,
+    "template": "rajwada",
+    "lang": { "default": "en", "available": ["en", "mr", "hi"], "numerals": "auto" },
+    "timezone": "Asia/Kolkata",
+    "tradition": "hindu",
+    "invocation": "auto",
+
+    "couple": {
+        "order": "groom-first",
+        "hashtag": "#AniruddhaWedsGayatri",
+        "groom": {
+            "name": { "en": "Aniruddha", "mr": "अनिरुद्ध", "hi": "अनिरुद्ध" },
+            "fullName": { "en": "Aniruddha Deshmukh", "mr": "अनिरुद्ध देशमुख", "hi": "अनिरुद्ध देशमुख" },
+            "parents": { "en": "Shri Vikramsinh & Smt. Sunanda Deshmukh", "mr": "श्री. विक्रमसिंह व सौ. सुनंदा देशमुख", "hi": "श्री विक्रमसिंह एवं श्रीमती सुनंदा देशमुख" },
+            "bio": {
+                "en": "An architect who restores old wadas and havelis, and believes every arch has a story. Happiest at an early-morning cricket match, or over his mother’s puran poli.",
+                "mr": "जुने वाडे आणि हवेल्यांचे जतन करणारा वास्तुविशारद; प्रत्येक कमानीला एक कहाणी असते, असे मानणारा. पहाटेचे क्रिकेट आणि आईची पुरणपोळी हे त्याचे सुख.",
+                "hi": "पुराने वाड़ों और हवेलियों को सँवारने वाले वास्तुकार, जो मानते हैं कि हर मेहराब की अपनी कहानी होती है। सुबह का क्रिकेट और माँ की पूरनपोली उन्हें सबसे प्रिय है।"
+            },
+            "photo": {
+                "src": "../../content/demo-media/groom-safa-360.webp",
+                "srcset": "../../content/demo-media/groom-safa-360.webp 360w, ../../content/demo-media/groom-safa-720.webp 720w",
+                "width": 360, "height": 480,
+                "alt": { "en": "A saffron and gold groom’s pheta on a carved table", "mr": "नक्षीदार मेजावर ठेवलेला केशरी-सोनेरी फेटा", "hi": "नक्काशीदार मेज़ पर रखा केसरिया-सुनहरा साफ़ा" }
+            }
+        },
+        "bride": {
+            "name": { "en": "Gayatri", "mr": "गायत्री", "hi": "गायत्री" },
+            "fullName": { "en": "Gayatri Inamdar", "mr": "गायत्री इनामदार", "hi": "गायत्री इनामदार" },
+            "parents": { "en": "Shri Mahendra & Smt. Rohini Inamdar", "mr": "श्री. महेंद्र व सौ. रोहिणी इनामदार", "hi": "श्री महेंद्र एवं श्रीमती रोहिणी इनामदार" },
+            "bio": {
+                "en": "A Kathak dancer and music teacher who can turn any courtyard into a stage. She collects old Paithani saris, ghazals and sunsets.",
+                "mr": "कोणत्याही अंगणाला रंगमंच बनवणारी कथक नृत्यांगना आणि संगीत शिक्षिका. जुन्या पैठण्या, गझला आणि सूर्यास्त जमवण्याचा तिला छंद आहे.",
+                "hi": "कथक नृत्यांगना और संगीत शिक्षिका, जो किसी भी आँगन को मंच बना दें। पुरानी पैठणी साड़ियाँ, ग़ज़लें और सूर्यास्त सहेजना उनका शौक़ है।"
+            },
+            "photo": {
+                "src": "../../content/demo-media/bride-namaste-360.webp",
+                "srcset": "../../content/demo-media/bride-namaste-360.webp 360w, ../../content/demo-media/bride-namaste-576.webp 576w",
+                "width": 360, "height": 480,
+                "alt": { "en": "A bride in red and gold, hands folded in namaste", "mr": "लाल-सोनेरी वस्त्रातील वधू, हात जोडून नमस्कार करताना", "hi": "लाल-सुनहरे परिधान में दुल्हन, हाथ जोड़कर नमस्ते करती हुई" }
+            }
+        }
+    },
+
+    "announcement": {
+        "message": {
+            "en": "With the blessings of our elders and the grace of the Almighty, we joyfully invite you and your family to the wedding of our children, Aniruddha and Gayatri.\n\nThe auspicious ceremony will be solemnised at Kesari Mahal, Kolhapur, on {date} {timeLong}. Your presence and blessings will make our celebration complete.",
+            "mr": "आमचे येथे श्रीकृपेकरून चि. अनिरुद्ध (श्री. विक्रमसिंह व सौ. सुनंदा देशमुख यांचे सुपुत्र) आणि चि. सौ. कां. गायत्री (श्री. महेंद्र व सौ. रोहिणी इनामदार यांची सुकन्या) यांचा शुभविवाह {date} रोजी {timeLong} केसरी महाल, कोल्हापूर येथे करण्याचे योजिले आहे.\n\nतरी या मंगलप्रसंगी आपण सहकुटुंब, सहपरिवार उपस्थित राहून वधू-वरांस शुभाशीर्वाद द्यावेत, ही नम्र विनंती.",
+            "hi": "ईश्वर की असीम कृपा एवं बड़ों के आशीर्वाद से चि. अनिरुद्ध (सुपुत्र श्री विक्रमसिंह एवं श्रीमती सुनंदा देशमुख) संग आयु. गायत्री (सुपुत्री श्री महेंद्र एवं श्रीमती रोहिणी इनामदार) का शुभ विवाह {date} को {timeLong} केसरी महल, कोल्हापुर में सम्पन्न होना निश्चित हुआ है।\n\nइस मंगल अवसर पर आप सपरिवार पधारकर वर-वधू को अपना आशीर्वाद प्रदान करें।"
+        }
+    },
+
+    "families": {
+        "blessings": {
+            "en": "Late Shri Shankarrao & Late Smt. Kamalabai Deshmukh\nSmt. Indumati & Late Shri Dattatray Inamdar",
+            "mr": "कै. शंकरराव व कै. कमलाबाई देशमुख\nसौ. इंदुमती व कै. दत्तात्रय इनामदार",
+            "hi": "स्व. श्री शंकरराव एवं स्व. श्रीमती कमलाबाई देशमुख\nश्रीमती इंदुमती एवं स्व. श्री दत्तात्रय इनामदार"
+        },
+        "groom": {
+            "members": {
+                "en": "Shri Vikramsinh & Smt. Sunanda Deshmukh\nShri Abhijeet & Smt. Prajakta Deshmukh (brother & sister-in-law)",
+                "mr": "श्री. विक्रमसिंह व सौ. सुनंदा देशमुख\nश्री. अभिजीत व सौ. प्राजक्ता देशमुख (बंधू व वहिनी)",
+                "hi": "श्री विक्रमसिंह एवं श्रीमती सुनंदा देशमुख\nश्री अभिजीत एवं श्रीमती प्राजक्ता देशमुख (भाई एवं भाभी)"
+            },
+            "place": { "en": "Kolhapur", "mr": "कोल्हापूर", "hi": "कोल्हापुर" }
+        },
+        "bride": {
+            "members": {
+                "en": "Shri Mahendra & Smt. Rohini Inamdar\nKu. Sayali Inamdar (sister)",
+                "mr": "श्री. महेंद्र व सौ. रोहिणी इनामदार\nकु. सायली इनामदार (भगिनी)",
+                "hi": "श्री महेंद्र एवं श्रीमती रोहिणी इनामदार\nकु. सायली इनामदार (बहन)"
+            },
+            "place": { "en": "Pune", "mr": "पुणे", "hi": "पुणे" }
+        },
+        "hosts": { "en": "Shri Vikramsinh & Smt. Sunanda Deshmukh", "mr": "श्री. विक्रमसिंह व सौ. सुनंदा देशमुख", "hi": "श्री विक्रमसिंह एवं श्रीमती सुनंदा देशमुख" },
+        "welcome": {
+            "en": "The Deshmukh and Inamdar families, with all our relatives and friends",
+            "mr": "समस्त देशमुख व इनामदार परिवार, आप्तेष्ट व मित्रपरिवार",
+            "hi": "समस्त देशमुख एवं इनामदार परिवार, सभी स्नेहीजन एवं मित्रगण"
+        }
+    },
+
+    "venues": {
+        "kesari": {
+            "name": { "en": "Kesari Mahal", "mr": "केसरी महाल", "hi": "केसरी महल" },
+            "city": { "en": "Kolhapur", "mr": "कोल्हापूर", "hi": "कोल्हापुर" },
+            "address": { "en": "New Palace Road, Kolhapur, Maharashtra", "mr": "न्यू पॅलेस रोड, कोल्हापूर, महाराष्ट्र", "hi": "न्यू पैलेस रोड, कोल्हापुर, महाराष्ट्र" },
+            "lat": 16.7188, "lng": 74.2365,
+            "note": { "en": "Valet parking at the main gate. The palace lawns are a short walk from the Darbar Hall.", "mr": "मुख्य प्रवेशद्वारावर वाहनतळ सेवा. दरबार हॉलपासून महालाची हिरवळ अगदी जवळ आहे.", "hi": "मुख्य द्वार पर वैलेट पार्किंग। दरबार हॉल से महल का लॉन बस कुछ कदम दूर है।" }
+        },
+        "rankala": {
+            "name": { "en": "Rankala Lake Pavilion", "mr": "रंकाळा तलाव मंडप", "hi": "रंकाळा झील मंडप" },
+            "city": { "en": "Kolhapur", "mr": "कोल्हापूर", "hi": "कोल्हापुर" },
+            "address": { "en": "Rankala Chowpatty, Kolhapur, Maharashtra", "mr": "रंकाळा चौपाटी, कोल्हापूर, महाराष्ट्र", "hi": "रंकाळा चौपाटी, कोल्हापुर, महाराष्ट्र" },
+            "lat": 16.6963, "lng": 74.2116
+        }
+    },
+
+    "events": [
+        {
+            "id": "mehendi", "type": "mehendi", "date": "2027-02-04", "start": "16:00", "venue": "kesari",
+            "spot": { "en": "Sheesh Mahal courtyard", "mr": "शीशमहाल चौक", "hi": "शीशमहल आँगन" },
+            "dressCode": { "en": "Shades of green", "mr": "हिरव्या रंगछटा", "hi": "हरे रंग की छटाएँ" },
+            "colors": ["#2f6b4f", "#8fbf7a", "#d9b44a"],
+            "note": { "en": "An evening of henna, folk songs and chai under the courtyard lanterns.", "mr": "मेहंदी, लोकगीते आणि कंदिलांच्या प्रकाशातील चहाची एक संध्याकाळ.", "hi": "मेहंदी, लोकगीत और लालटेनों की रोशनी में चाय की एक शाम।" }
+        },
+        {
+            "id": "haldi", "type": "haldi", "date": "2027-02-05", "start": "09:30", "end": "12:30", "venue": "kesari",
+            "spot": { "en": "Palace lawns", "mr": "महालाची हिरवळ", "hi": "महल का लॉन" },
+            "dressCode": { "en": "Yellow and white", "mr": "पिवळा व पांढरा", "hi": "पीला और सफ़ेद" },
+            "colors": ["#f2c230", "#fff4d6"],
+            "note": { "en": "Expect turmeric! Wear something you don’t mind turning golden.", "mr": "हळद उडणारच! रंगले तरी चालतील असेच कपडे घालावेत.", "hi": "हल्दी तो लगेगी ही! ऐसे कपड़े पहनें जिन पर रंग चढ़ जाए तो चिंता न हो।" }
+        },
+        {
+            "id": "sangeet", "type": "sangeet", "date": "2027-02-05", "start": "19:30", "venue": "kesari",
+            "spot": { "en": "Darbar Hall", "mr": "दरबार हॉल", "hi": "दरबार हॉल" },
+            "dressCode": { "en": "Indo-western glamour", "mr": "इंडो-वेस्टर्न झगमगाट", "hi": "इंडो-वेस्टर्न चमक-दमक" },
+            "colors": ["#1f2a5a", "#c9a24a"],
+            "note": { "en": "Both families take the stage. Dinner is served from 9 PM.", "mr": "दोन्ही कुटुंबांचे सादरीकरण. रात्री ९ वाजल्यापासून भोजन.", "hi": "दोनों परिवारों की प्रस्तुतियाँ। रात 9 बजे से भोजन।" }
+        },
+        {
+            "id": "wedding", "type": "wedding", "main": true, "muhurat": true, "date": "2027-02-06", "start": "12:31", "venue": "kesari",
+            "spot": { "en": "Palace lawns", "mr": "महालाची हिरवळ", "hi": "महल का लॉन" },
+            "dressCode": { "en": "Traditional: Paithani, nauvari, pheta", "mr": "पारंपरिक: पैठणी, नऊवारी, फेटा", "hi": "पारंपरिक: पैठणी, नौवारी, साफ़ा" },
+            "colors": ["#a3192e", "#c9a24a"],
+            "note": { "en": "Please be seated by 12 noon for the antarpat and mangalashtak.", "mr": "अंतरपाट व मंगलाष्टकांसाठी कृपया दुपारी १२ वाजेपर्यंत स्थानापन्न व्हावे.", "hi": "अंतरपट और मंगलाष्टक के लिए कृपया दोपहर 12 बजे तक अपना स्थान ग्रहण करें।" }
+        },
+        {
+            "id": "reception", "type": "reception", "date": "2027-02-06", "start": "19:30", "end": "23:00", "venue": "rankala",
+            "dressCode": { "en": "Royal evening wear", "mr": "शाही संध्या पोशाख", "hi": "शाही शाम का परिधान" },
+            "colors": ["#4b0d19", "#e3c47a"],
+            "note": { "en": "Dinner by the lake, with music under the stars.", "mr": "तलावाकाठी भोजन आणि चांदण्यांखाली संगीत.", "hi": "झील किनारे भोज और तारों तले संगीत।" }
+        }
+    ],
+
+    "countdown": { "event": "wedding" },
+
+    "guide": {
+        "dressCode": {
+            "en": "Traditional Indian attire for the wedding; rich jewel tones are warmly welcome. Each celebration has its own colours in the schedule above.",
+            "mr": "विवाहासाठी पारंपरिक भारतीय पोशाख; गडद, शाही रंगांचे मनापासून स्वागत. प्रत्येक कार्यक्रमाचे रंग वरील वेळापत्रकात दिले आहेत.",
+            "hi": "विवाह के लिए पारंपरिक भारतीय परिधान; गहरे, शाही रंगों का हार्दिक स्वागत है। हर कार्यक्रम के रंग ऊपर की सूची में दिए गए हैं।"
+        },
+        "colors": ["#a3192e", "#c9a24a", "#2f5d50", "#1f2a5a"],
+        "items": [
+            { "icon": "stay", "title": { "en": "Where to stay", "mr": "निवास व्यवस्था", "hi": "ठहरने की व्यवस्था" },
+              "text": { "en": "Rooms for out-of-town guests are held at the palace guest wing from 4 to 7 February. Please let us know your arrival time.", "mr": "बाहेरगावच्या पाहुण्यांसाठी ४ ते ७ फेब्रुवारी दरम्यान महालाच्या अतिथीगृहात खोल्या राखीव आहेत. कृपया आपल्या आगमनाची वेळ कळवावी.", "hi": "बाहर से आने वाले अतिथियों के लिए 4 से 7 फ़रवरी तक महल के अतिथि-गृह में कमरे आरक्षित हैं। कृपया अपने आगमन का समय बताएँ।" } },
+            { "icon": "parking", "title": { "en": "Parking", "mr": "वाहनतळ", "hi": "पार्किंग" },
+              "text": { "en": "Valet parking is available at the main palace gate for every celebration.", "mr": "प्रत्येक कार्यक्रमासाठी महालाच्या मुख्य प्रवेशद्वारावर वाहनतळ सेवा उपलब्ध आहे.", "hi": "हर कार्यक्रम के लिए महल के मुख्य द्वार पर वैलेट पार्किंग उपलब्ध है।" } },
+            { "icon": "weather", "title": { "en": "Weather", "mr": "हवामान", "hi": "मौसम" },
+              "text": { "en": "February evenings in Kolhapur are pleasant, around 18°C. Bring a light shawl for the lakeside reception.", "mr": "फेब्रुवारीत कोल्हापुरातील संध्याकाळ आल्हाददायक असते, सुमारे १८°C. तलावाकाठच्या स्वागत समारंभासाठी हलकी शाल सोबत ठेवावी.", "hi": "फ़रवरी में कोल्हापुर की शामें सुहावनी होती हैं, लगभग 18°C। झील किनारे के प्रीतिभोज के लिए हल्की शॉल साथ रखें।" } },
+            { "icon": "gift", "title": { "en": "Blessings, not gifts", "mr": "आहेर नको, आशीर्वाद हवेत", "hi": "उपहार नहीं, आशीर्वाद" },
+              "text": { "en": "Your presence is our greatest gift. We kindly request no gifts or bouquets.", "mr": "आपली उपस्थिती हाच आमच्यासाठी मोठा आहेर. कृपया आहेर व पुष्पगुच्छ आणू नयेत.", "hi": "आपकी उपस्थिति ही हमारे लिए सबसे बड़ा उपहार है। कृपया उपहार या पुष्पगुच्छ न लाएँ।" } },
+            { "icon": "food", "title": { "en": "The feast", "mr": "भोजन", "hi": "भोज" },
+              "text": { "en": "A traditional Kolhapuri and Maharashtrian vegetarian feast follows the wedding ceremony.", "mr": "विवाह सोहळ्यानंतर पारंपरिक कोल्हापुरी व महाराष्ट्रीय शाकाहारी भोजन.", "hi": "विवाह समारोह के बाद पारंपरिक कोल्हापुरी एवं महाराष्ट्रीय शाकाहारी भोज।" } },
+            { "icon": "camera", "title": { "en": "An unplugged ceremony", "mr": "मोबाइलविना सोहळा", "hi": "मोबाइल-मुक्त समारोह" },
+              "text": { "en": "Our photographers will capture every moment of the saptapadi. Please keep phones away during the ceremony.", "mr": "सप्तपदीचा प्रत्येक क्षण आमचे छायाचित्रकार टिपतील. सोहळ्यादरम्यान कृपया मोबाइल बाजूला ठेवावा.", "hi": "सप्तपदी का हर पल हमारे फ़ोटोग्राफ़र सहेजेंगे। समारोह के दौरान कृपया फ़ोन दूर रखें।" } }
+        ],
+        "contacts": [
+            { "name": { "en": "Abhijeet Deshmukh", "mr": "अभिजीत देशमुख", "hi": "अभिजीत देशमुख" }, "relation": { "en": "Groom’s brother", "mr": "वराचे बंधू", "hi": "वर के भाई" }, "phone": "+91 90000 00001" },
+            { "name": { "en": "Sayali Inamdar", "mr": "सायली इनामदार", "hi": "सायली इनामदार" }, "relation": { "en": "Bride’s sister", "mr": "वधूची भगिनी", "hi": "वधू की बहन" }, "phone": "+91 90000 00002" }
+        ]
+    },
+
+    "gallery": {
+        "photos": [
+            { "src": "../../content/demo-media/mehendi-bangles-360.webp", "srcset": "../../content/demo-media/mehendi-bangles-360.webp 360w, ../../content/demo-media/mehendi-bangles-720.webp 720w", "width": 360, "height": 480,
+              "alt": { "en": "Hennaed hands with stacked bangles", "mr": "मेहंदी रंगलेले हात आणि बांगड्या", "hi": "मेहंदी रचे हाथ और चूड़ियाँ" }, "caption": { "en": "Mehendi evening", "mr": "मेहंदीची संध्याकाळ", "hi": "मेहंदी की शाम" } },
+            { "src": "../../content/demo-media/rings-henna-360.webp", "srcset": "../../content/demo-media/rings-henna-360.webp 360w, ../../content/demo-media/rings-henna-512.webp 512w", "width": 360, "height": 480,
+              "alt": { "en": "Two hands with rings, in black and white", "mr": "अंगठ्या घातलेले दोन हात, कृष्णधवल", "hi": "अंगूठियाँ पहने दो हाथ, श्वेत-श्याम" }, "caption": { "en": "The rings", "mr": "अंगठ्या", "hi": "अंगूठियाँ" } },
+            { "src": "../../content/demo-media/green-silk-360.webp", "srcset": "../../content/demo-media/green-silk-360.webp 360w, ../../content/demo-media/green-silk-512.webp 512w", "width": 360, "height": 480,
+              "alt": { "en": "A bride’s hennaed hands against green silk and gold jewellery", "mr": "हिरव्या शालूवर मेहंदीचे हात आणि सोन्याचे दागिने", "hi": "हरे रेशम पर मेहंदी रचे हाथ और सुनहरे गहने" }, "caption": { "en": "Green silk and gold", "mr": "हिरवा शालू, सोनेरी साज", "hi": "हरा रेशम, सुनहरा श्रृंगार" } },
+            { "src": "../../content/demo-media/red-bangles-360.webp", "srcset": "../../content/demo-media/red-bangles-360.webp 360w, ../../content/demo-media/red-bangles-576.webp 576w", "width": 360, "height": 480,
+              "alt": { "en": "Red and ivory bridal bangles on embroidered silk", "mr": "भरजरी वस्त्रावर लाल-पांढऱ्या बांगड्या", "hi": "कढ़ाईदार रेशम पर लाल-सफ़ेद चूड़ा" }, "caption": { "en": "The bridal chuda", "mr": "वधूचा चुडा", "hi": "दुल्हन का चूड़ा" } },
+            { "src": "../../content/demo-media/ritual-hands-360.webp", "srcset": "../../content/demo-media/ritual-hands-360.webp 360w, ../../content/demo-media/ritual-hands-512.webp 512w", "width": 360, "height": 480,
+              "alt": { "en": "Cupped hands holding a ritual offering", "mr": "ओंजळीत धरलेले पूजेचे साहित्य", "hi": "अंजुली में पूजा की सामग्री" }, "caption": { "en": "Blessings in every ritual", "mr": "प्रत्येक विधीत आशीर्वाद", "hi": "हर रस्म में आशीर्वाद" } },
+            { "src": "../../content/demo-media/alta-feet-360.webp", "srcset": "../../content/demo-media/alta-feet-360.webp 360w, ../../content/demo-media/alta-feet-680.webp 680w", "width": 360, "height": 480,
+              "alt": { "en": "A bride’s feet painted with alta beneath an embroidered hem", "mr": "भरजरी काठाखाली आळता लावलेली वधूची पावले", "hi": "कढ़ाईदार किनारी के नीचे आलता लगे दुल्हन के पाँव" }, "caption": { "en": "Alta and anklets", "mr": "आळता आणि पैंजण", "hi": "आलता और पायल" } },
+            { "src": "../../content/demo-media/groom-safa-360.webp", "srcset": "../../content/demo-media/groom-safa-360.webp 360w, ../../content/demo-media/groom-safa-720.webp 720w", "width": 360, "height": 480,
+              "alt": { "en": "A saffron and gold groom’s pheta", "mr": "केशरी-सोनेरी फेटा", "hi": "केसरिया-सुनहरा साफ़ा" }, "caption": { "en": "The groom’s pheta", "mr": "नवरदेवाचा फेटा", "hi": "दूल्हे का साफ़ा" } },
+            { "src": "../../content/demo-media/lights-canopy-360.webp", "srcset": "../../content/demo-media/lights-canopy-360.webp 360w, ../../content/demo-media/lights-canopy-690.webp 690w", "width": 360, "height": 480,
+              "alt": { "en": "A canopy of fairy lights converging on a lantern", "mr": "एका कंदिलाकडे एकवटलेल्या दिव्यांच्या माळा", "hi": "एक लालटेन की ओर मिलती रोशनी की लड़ियाँ" }, "caption": { "en": "Under a canopy of lights", "mr": "दिव्यांच्या छताखाली", "hi": "रोशनी के शामियाने तले" } }
+        ]
+    },
+
+    "music": {
+        "src": "synth:tanpura",
+        "title": { "en": "Tanpura at dusk", "mr": "सांजवेळचा तानपुरा", "hi": "साँझ का तानपुरा" },
+        "artist": "weds.live"
+    },
+
+    "rsvp": {
+        "provider": "demo",
+        "deadline": "2027-01-20",
+        "maxGuests": 6,
+        "perEvent": true,
+        "diet": ["veg", "jain"],
+        "note": { "en": "This is a preview: replies are not sent anywhere.", "mr": "हे फक्त नमुना निमंत्रण आहे: उत्तर कुठेही पाठवले जात नाही.", "hi": "यह केवल नमूना है: उत्तर कहीं नहीं भेजा जाता।" }
+    },
+
+    "thankyou": {
+        "message": {
+            "en": "Your love and blessings mean the world to us. We can’t wait to begin this new chapter with you, surrounded by family, music and the warm lights of Kesari Mahal.",
+            "mr": "आपले प्रेम आणि आशीर्वाद हेच आमचे खरे धन. कुटुंबीय, संगीत आणि केसरी महालाच्या उबदार दिव्यांच्या साक्षीने या नव्या प्रवासाची सुरुवात आपल्यासोबत करण्यास आम्ही आतुर आहोत.",
+            "hi": "आपका स्नेह और आशीर्वाद ही हमारी सबसे बड़ी पूँजी है। परिवार, संगीत और केसरी महल की सुनहरी रोशनी के बीच इस नए अध्याय की शुरुआत आपके साथ करने के लिए हम उत्सुक हैं।"
+        }
+    },
+
+    "seo": {
+        "title": { "en": "Rajwada · Royal Indian Wedding Invitation · weds.live", "mr": "राजवाडा · शाही शुभविवाह निमंत्रण · weds.live", "hi": "राजवाड़ा · शाही विवाह निमंत्रण · weds.live" },
+        "description": { "en": "A royal Indian digital wedding invitation: palace arches, gold leaf, a wax-sealed envelope, live countdown, RSVP and directions. In English, Marathi and Hindi." },
+        "image": "https://weds.live/invitations/templates/rajwada/og.jpg",
+        "indexable": true
+    }
+}
+    </script>
+</body>
+</html>

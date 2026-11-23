@@ -1,0 +1,128 @@
+{
+ "groom-safa": [
+  {
+   "file": "groom-safa-360.webp",
+   "width": 360,
+   "height": 480,
+   "kb": 21
+  },
+  {
+   "file": "groom-safa-720.webp",
+   "width": 720,
+   "height": 960,
+   "kb": 58
+  }
+ ],
+ "bride-namaste": [
+  {
+   "file": "bride-namaste-360.webp",
+   "width": 360,
+   "height": 480,
+   "kb": 47
+  },
+  {
+   "file": "bride-namaste-576.webp",
+   "width": 576,
+   "height": 768,
+   "kb": 111
+  }
+ ],
+ "mehendi-bangles": [
+  {
+   "file": "mehendi-bangles-360.webp",
+   "width": 360,
+   "height": 480,
+   "kb": 25
+  },
+  {
+   "file": "mehendi-bangles-720.webp",
+   "width": 720,
+   "height": 960,
+   "kb": 60
+  }
+ ],
+ "rings-henna": [
+  {
+   "file": "rings-henna-360.webp",
+   "width": 360,
+   "height": 480,
+   "kb": 20
+  },
+  {
+   "file": "rings-henna-512.webp",
+   "width": 512,
+   "height": 683,
+   "kb": 34
+  }
+ ],
+ "green-silk": [
+  {
+   "file": "green-silk-360.webp",
+   "width": 360,
+   "height": 480,
+   "kb": 24
+  },
+  {
+   "file": "green-silk-512.webp",
+   "width": 512,
+   "height": 683,
+   "kb": 38
+  }
+ ],
+ "red-bangles": [
+  {
+   "file": "red-bangles-360.webp",
+   "width": 360,
+   "height": 480,
+   "kb": 46
+  },
+  {
+   "file": "red-bangles-576.webp",
+   "width": 576,
+   "height": 768,
+   "kb": 90
+  }
+ ],
+ "ritual-hands": [
+  {
+   "file": "ritual-hands-360.webp",
+   "width": 360,
+   "height": 480,
+   "kb": 10
+  },
+  {
+   "file": "ritual-hands-512.webp",
+   "width": 512,
+   "height": 683,
+   "kb": 16
+  }
+ ],
+ "alta-feet": [
+  {
+   "file": "alta-feet-360.webp",
+   "width": 360,
+   "height": 480,
+   "kb": 43
+  },
+  {
+   "file": "alta-feet-680.webp",
+   "width": 680,
+   "height": 907,
+   "kb": 113
+  }
+ ],
+ "lights-canopy": [
+  {
+   "file": "lights-canopy-360.webp",
+   "width": 360,
+   "height": 480,
+   "kb": 49
+  },
+  {
+   "file": "lights-canopy-690.webp",
+   "width": 690,
+   "height": 920,
+   "kb": 125
+  }
+ ]
+}

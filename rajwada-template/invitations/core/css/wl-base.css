@@ -1,0 +1,245 @@
+/* ==========================================================================
+   weds.live invitation engine · shared base styles
+   Structure, accessibility and motion plumbing only. Every visual decision
+   (colour, type, spacing, art) belongs to the template stylesheet.
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    scroll-padding-top: 1rem;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, svg, video, iframe { display: block; max-width: 100%; }
+img { height: auto; }
+svg { overflow: visible; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+p, h1, h2, h3, h4, figure, blockquote, dl, dd { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+legend { padding: 0; }
+[hidden] { display: none !important; }
+
+/* No horizontal scroll from decorative overflow, without breaking position:sticky */
+.wl-main { overflow-x: clip; }
+@supports not (overflow: clip) { .wl-main { overflow-x: hidden; } }
+.wl-main:focus { outline: none; }
+
+.wl-sr-only {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+:focus-visible {
+    outline: 2px solid var(--wl-focus, currentColor);
+    outline-offset: 3px;
+}
+
+html.wl-locked,
+html.wl-locked body { overflow: hidden; overscroll-behavior: none; }
+
+/* Inline SVG defs (gradients, clip paths) must stay renderable: never display:none */
+.wl-defs { position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none; }
+
+/* Decorative art never captures taps meant for content */
+.wl-art, [data-art] { pointer-events: none; user-select: none; }
+
+/* ---------- Loader ---------- */
+
+.wl-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    transition: opacity .6s ease, visibility .6s;
+}
+.wl-loader.is-done { opacity: 0; visibility: hidden; }
+
+/* ---------- Reveal on scroll (only when JS + motion are on) ---------- */
+
+.wl-motion [data-reveal] {
+    transition:
+        opacity var(--wl-reveal-duration, .9s) var(--wl-ease, cubic-bezier(.22, .61, .36, 1)) var(--wl-delay, 0ms),
+        transform var(--wl-reveal-duration, .9s) var(--wl-ease, cubic-bezier(.22, .61, .36, 1)) var(--wl-delay, 0ms);
+}
+.wl-motion [data-reveal]:not(.is-in) { opacity: 0; transform: translate3d(0, var(--wl-reveal-y, 22px), 0); }
+.wl-motion [data-reveal="fade"]:not(.is-in) { transform: none; }
+.wl-motion [data-reveal="scale"]:not(.is-in) { transform: scale(.94); }
+.wl-motion [data-reveal="left"]:not(.is-in) { transform: translate3d(-28px, 0, 0); }
+.wl-motion [data-reveal="right"]:not(.is-in) { transform: translate3d(28px, 0, 0); }
+
+/* data-reveal="draw": .wl-draw strokes inside draw themselves (give them pathLength="1") */
+.wl-motion [data-reveal="draw"]:not(.is-in) { transform: none; }
+.wl-motion [data-reveal="draw"] .wl-draw {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 2.2s var(--wl-ease, ease) var(--wl-delay, 0ms);
+}
+.wl-motion [data-reveal="draw"].is-in .wl-draw { stroke-dashoffset: 0; }
+
+/* Deep links render every section first so the jump lands exactly */
+.wl-cv-off [data-section] { content-visibility: visible !important; }
+
+/* Looping decoration pauses while off screen */
+[data-inview]:not(.is-visible) .wl-loop,
+[data-inview]:not(.is-visible).wl-loop { animation-play-state: paused !important; }
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+html.wl-reduced *, html.wl-reduced *::before, html.wl-reduced *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+}
+
+/* ---------- Buttons (structure only) ---------- */
+
+.wl-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    min-height: 44px;
+    padding: .6em 1.2em;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    background: none;
+    text-decoration: none;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+.wl-btn svg { width: 1.15em; height: 1.15em; flex: none; }
+.wl-btn--icon { width: 44px; padding: 0; }
+.wl-btn[disabled] { opacity: .6; cursor: progress; }
+.wl-actions { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; }
+
+/* ---------- Shared component structure ---------- */
+
+.wl-meta { display: grid; gap: .45rem; }
+.wl-meta__row { display: flex; gap: .6rem; align-items: flex-start; }
+.wl-meta__label { flex: none; display: flex; }
+.wl-meta__label svg { width: 1.15em; height: 1.15em; margin-top: .2em; }
+.wl-meta__value { min-width: 0; overflow-wrap: anywhere; }
+.wl-swatches { display: inline-flex; gap: .3rem; vertical-align: middle; margin-inline-start: .4rem; }
+.wl-swatch { display: inline-block; width: .9em; height: .9em; border-radius: 50%; box-shadow: 0 0 0 1px rgba(0,0,0,.15) inset; }
+
+.wl-cal { position: relative; display: inline-block; }
+.wl-cal__menu {
+    position: absolute;
+    z-index: 20;
+    left: 50%;
+    top: calc(100% + 8px);
+    transform: translateX(-50%);
+    min-width: 230px;
+    display: grid;
+    padding: .4rem;
+}
+.wl-cal__item {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: .5rem .9rem;
+    border: 0;
+    background: none;
+    text-align: left;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.wl-map { position: relative; overflow: hidden; }
+.wl-map__show { position: absolute; left: 50%; bottom: 1rem; transform: translateX(-50%); }
+.wl-map__frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.wl-map.is-loaded .wl-map__art { visibility: hidden; }
+
+.wl-gallery__open { display: block; width: 100%; padding: 0; border: 0; background: none; }
+.wl-gallery__img { width: 100%; height: 100%; object-fit: cover; }
+
+.wl-lightbox {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+.wl-lightbox::backdrop { background: rgba(0, 0, 0, .86); }
+.wl-lightbox__stage { position: absolute; inset: 0; display: grid; place-items: center; padding: 4.5rem 1rem 5.5rem; }
+.wl-lightbox__figure { display: grid; justify-items: center; gap: .9rem; max-width: 100%; max-height: 100%; }
+.wl-lightbox__img { max-width: min(92vw, 1100px); max-height: calc(100dvh - 11rem); width: auto; height: auto; object-fit: contain; }
+.wl-lightbox__btn { position: absolute; display: grid; place-items: center; width: 48px; height: 48px; border: 0; border-radius: 50%; }
+.wl-lightbox__close { top: max(1rem, env(safe-area-inset-top)); right: 1rem; }
+.wl-lightbox__prev, .wl-lightbox__next { bottom: max(1.25rem, env(safe-area-inset-bottom)); }
+.wl-lightbox__prev { left: calc(50% - 64px); }
+.wl-lightbox__next { left: calc(50% + 16px); }
+.wl-lightbox__counter { position: absolute; top: max(1.6rem, env(safe-area-inset-top)); left: 1.25rem; }
+.wl-lightbox__figure { transition: opacity .35s ease, transform .45s var(--wl-ease, ease); }
+.wl-lightbox__figure:not(.is-in) { opacity: 0; transform: scale(.97); }
+.wl-lightbox__figure.is-from-right:not(.is-in) { transform: translate3d(36px, 0, 0); }
+.wl-lightbox__figure.is-from-left:not(.is-in) { transform: translate3d(-36px, 0, 0); }
+
+.wl-hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.wl-field { display: grid; gap: .45rem; }
+.wl-input { width: 100%; min-height: 46px; }
+.wl-input--area { min-height: 96px; resize: vertical; }
+.wl-choice__options, .wl-chips__list { display: flex; flex-wrap: wrap; gap: .6rem; }
+.wl-choice__option, .wl-chip { position: relative; cursor: pointer; }
+.wl-choice__option input, .wl-chip input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.wl-stepper__row { display: flex; align-items: stretch; gap: .5rem; }
+.wl-stepper__btn { width: 46px; min-height: 46px; flex: none; }
+.wl-stepper__input { text-align: center; max-width: 5.5rem; -moz-appearance: textfield; appearance: textfield; }
+.wl-stepper__input::-webkit-outer-spin-button,
+.wl-stepper__input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+
+.wl-music { position: fixed; z-index: 40; }
+.wl-music__hint { pointer-events: none; }
+
+.wl-notfound {
+    min-height: 100svh;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    text-align: center;
+}
+.wl-notfound__body { max-width: 32rem; }
+
+@media (forced-colors: active) {
+    .wl-gold-text { color: CanvasText !important; background: none !important; -webkit-text-fill-color: CanvasText !important; }
+}
+
+@media print {
+    .wl-loader, .wl-music, .wl-lang, [data-wl-envelope] { display: none !important; }
+    [data-reveal] { opacity: 1 !important; transform: none !important; }
+}

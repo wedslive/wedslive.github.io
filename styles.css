@@ -411,24 +411,25 @@ body.dark-mode .moon-icon {
     line-height: 1.2;
 }
 
-.hero-title-script {
-    display: block;
-    font-family: 'Great Vibes', cursive;
-    font-weight: 400;
-    font-size: clamp(3.2rem, 5.5vw, 5.2rem);
-    color: #e8c88a;
-    margin-bottom: 1.8rem;
-    text-shadow: 0 2px 24px rgba(232, 200, 138, 0.4), 0 0 60px rgba(232, 200, 138, 0.15);
-    line-height: 1.1;
-}
-
 .hero-title-main {
     display: block;
     font-family: 'Playfair Display', 'Georgia', serif;
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-weight: 400;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 600;
     color: #f5dde8;
-    line-height: 1.4;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+/* Gold script accent word inside the headline */
+.hero-title-script {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: 1.25em;
+    color: #e8c88a;
+    line-height: 1;
+    padding: 0 0.05em;
+    text-shadow: 0 2px 24px rgba(232, 200, 138, 0.35);
 }
 
 .hero-title-main strong { font-weight: 700; }

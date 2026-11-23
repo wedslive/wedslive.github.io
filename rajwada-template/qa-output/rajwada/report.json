@@ -1,0 +1,982 @@
+[
+ {
+  "ok": true,
+  "name": "360px envelope fits the screen",
+  "detail": "overflow 0px"
+ },
+ {
+  "ok": true,
+  "name": "360px envelope is fully visible",
+  "detail": "{\"top\":234.42333984375,\"bottom\":617.45458984375,\"h\":780}"
+ },
+ {
+  "ok": true,
+  "name": "360px hero text stays inside the arch",
+  "detail": "13 text boxes"
+ },
+ {
+  "ok": true,
+  "name": "360px hero text clear of the elephants",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px hero: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "360px hero: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px hero: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px hero: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px announcement: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "360px announcement: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px announcement: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px announcement: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px couple: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "360px couple: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px couple: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px couple: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px families: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "360px families: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px families: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px families: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px countdown: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "360px countdown: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px countdown: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px countdown: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px events: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "360px events: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px events: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px events: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px venue: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "360px venue: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px venue: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px venue: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px guide: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "360px guide: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px guide: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px guide: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px gallery: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "360px gallery: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px gallery: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px gallery: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px rsvp: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "360px rsvp: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px rsvp: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px rsvp: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px thankyou: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "360px thankyou: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px thankyou: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px thankyou: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "360px no console errors",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px envelope fits the screen",
+  "detail": "overflow 0px"
+ },
+ {
+  "ok": true,
+  "name": "390px envelope is fully visible",
+  "detail": "{\"top\":252.3255157470703,\"bottom\":667.2630157470703,\"h\":844}"
+ },
+ {
+  "ok": true,
+  "name": "390px hero text stays inside the arch",
+  "detail": "12 text boxes"
+ },
+ {
+  "ok": true,
+  "name": "390px hero text clear of the elephants",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px hero: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "390px hero: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px hero: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px hero: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px announcement: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "390px announcement: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px announcement: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px announcement: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px couple: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "390px couple: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px couple: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px couple: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px families: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "390px families: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px families: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px families: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px countdown: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "390px countdown: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px countdown: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px countdown: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px events: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "390px events: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px events: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px events: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px venue: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "390px venue: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px venue: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px venue: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px guide: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "390px guide: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px guide: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px guide: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px gallery: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "390px gallery: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px gallery: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px gallery: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px rsvp: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "390px rsvp: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px rsvp: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px rsvp: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px thankyou: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "390px thankyou: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px thankyou: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px thankyou: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "390px no console errors",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px envelope fits the screen",
+  "detail": "overflow 0px"
+ },
+ {
+  "ok": true,
+  "name": "430px envelope is fully visible",
+  "detail": "{\"top\":281.8533935546875,\"bottom\":729.8533935546875,\"h\":932}"
+ },
+ {
+  "ok": true,
+  "name": "430px hero text stays inside the arch",
+  "detail": "12 text boxes"
+ },
+ {
+  "ok": true,
+  "name": "430px hero text clear of the elephants",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px hero: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "430px hero: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px hero: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px hero: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px announcement: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "430px announcement: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px announcement: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px announcement: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px couple: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "430px couple: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px couple: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px couple: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px families: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "430px families: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px families: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px families: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px countdown: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "430px countdown: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px countdown: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px countdown: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px events: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "430px events: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px events: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px events: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px venue: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "430px venue: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px venue: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px venue: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px guide: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "430px guide: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px guide: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px guide: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px gallery: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "430px gallery: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px gallery: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px gallery: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px rsvp: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "430px rsvp: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px rsvp: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px rsvp: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px thankyou: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "430px thankyou: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px thankyou: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px thankyou: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "430px no console errors",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px envelope fits the screen",
+  "detail": "overflow 0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px envelope is fully visible",
+  "detail": "{\"top\":218.66152954101562,\"bottom\":666.6614990234375,\"h\":800}"
+ },
+ {
+  "ok": true,
+  "name": "1280px hero text stays inside the arch",
+  "detail": "12 text boxes"
+ },
+ {
+  "ok": true,
+  "name": "1280px hero text clear of the elephants",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px hero: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px hero: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px hero: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px hero: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px announcement: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px announcement: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px announcement: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px announcement: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px couple: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px couple: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px couple: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px couple: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px families: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px families: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px families: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px families: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px countdown: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px countdown: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px countdown: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px countdown: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px events: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px events: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px events: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px events: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px venue: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px venue: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px venue: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px venue: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px guide: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px guide: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px guide: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px guide: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px gallery: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px gallery: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px gallery: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px gallery: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px rsvp: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px rsvp: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px rsvp: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px rsvp: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px thankyou: no horizontal overflow",
+  "detail": "0px"
+ },
+ {
+  "ok": true,
+  "name": "1280px thankyou: text clear of artwork",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px thankyou: no clipped one-line text",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px thankyou: touch targets >= 40px",
+  "detail": ""
+ },
+ {
+  "ok": true,
+  "name": "1280px no console errors",
+  "detail": ""
+ }
+]
